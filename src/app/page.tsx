@@ -1,7 +1,5 @@
+import Main from "./main/page";
+
 export default function Home() {
-  return (
-    <main>
-      <div>Home</div>
-    </main>
-  );
+  return <Main />;
 }
