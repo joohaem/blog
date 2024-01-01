@@ -1,9 +1,13 @@
+import Header from "@/components/Header";
 import { container } from "./page.css";
 
 export default function Main() {
   return (
-    <main>
-      <div className={container}>Main</div>
-    </main>
+    <>
+      <Header />
+      <main>
+        <div className={container}>Main</div>
+      </main>
+    </>
   );
 }
