@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-export const header = style({
+export const headerContainer = style({
   maxWidth: "1194px",
   height: "52px",
   overflowY: "hidden",
@@ -14,10 +14,12 @@ export const header = style({
   borderBottom: "0.5px solid #aaa",
 });
 
-export const leftWrapper = style({
+export const headerLayout = style({
+  width: "100%",
   height: "100%",
 
   display: "flex",
+  justifyContent: "space-between",
   alignItems: "center",
   gap: "40px",
 });
@@ -36,15 +38,15 @@ export const tab = style({
   height: "100%",
   display: "flex",
   alignItems: "center",
-
-  ":after": {
-    content: "",
-    position: "absolute",
-    left: "0",
-    right: "0",
-    bottom: "-2px",
-    height: "6px",
-    backgroundColor: "#3F2305",
-    borderRadius: "6px",
-  },
 });
+
+export const inactiveTab = style([
+  tab,
+  {
+    color: "#555",
+
+    ":hover": {
+      color: "#000",
+    },
+  },
+]);

@@ -42,21 +42,13 @@ const pretendardFont = localFont({
   display: "swap",
 });
 
-const robotoMonoFont = Roboto_Mono({
-  display: "swap",
-  subsets: ["latin", "latin-ext"],
-});
-
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${pretendardFont.className} ${robotoMonoFont.className}`}
-    >
+    <html lang="en" className={`${pretendardFont.className}`}>
       <body>{children}</body>
     </html>
   );
