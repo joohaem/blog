@@ -1,7 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
 export const headerContainer = style({
-  maxWidth: "1194px",
   height: "52px",
   overflowY: "hidden",
 

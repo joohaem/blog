@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import EmphasizedText from "../EmphasizedText";
-import Heading from "../Heading";
+import { usePathname } from "next/navigation";
+import Conatiner from "@/components/Container";
+import EmphasizedText from "@/components/EmphasizedText";
+import Heading from "@/components/Heading";
 import {
   headerContainer,
   headerLayout,
@@ -10,13 +12,12 @@ import {
   tab,
   tabsWrapper,
 } from "./index.css";
-import { usePathname } from "next/navigation";
 
 const TABS = [
   {
     id: "about",
     text: "About",
-    href: "/about",
+    href: "/about", // TODO :: contains "/"
   },
   {
     id: "keyword",
@@ -34,21 +35,24 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className={headerContainer}>
-      <div className={headerLayout}>
-        <Link href="/">
-          <EmphasizedText size="s">SNUPI</EmphasizedText>
-        </Link>
-        <ul className={tabsWrapper}>
-          {TABS.map(({ id, text, href }) => (
-            <li className={pathname === href ? tab : inactiveTab} key={id}>
-              <Link href={href}>
-                <Heading size="title-s">{text}</Heading>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </header>
+    <Conatiner>
+      <header className={headerContainer}>
+        <div className={headerLayout}>
+          <Link href="/">
+            <EmphasizedText size="s">SNUPI</EmphasizedText>
+          </Link>
+          <ul className={tabsWrapper}>
+            {TABS.map(({ id, text, href }) => (
+              // TODO :: color change with Heading props
+              <li className={pathname === href ? tab : inactiveTab} key={id}>
+                <Link href={href}>
+                  <Heading size="title-s">{text}</Heading>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </header>
+    </Conatiner>
   );
 }
