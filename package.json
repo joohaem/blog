@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.5",
     "@vanilla-extract/css": "^1.14.0",
     "next": "14.0.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "notion-client": "^6.16.0",
+    "notion-types": "^6.16.0"
   },
   "devDependencies": {
     "@types/node": "^20",

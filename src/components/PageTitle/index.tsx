@@ -1,4 +1,3 @@
-import React from "react";
 import { container, pageTitleRoot, title } from "./index.css";
 import Conatiner from "../Container";
 

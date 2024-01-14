@@ -1,8 +1,9 @@
-import React from "react";
 import Header from "@/components/Header";
 import PageTitle from "@/components/PageTitle";
+import { getArticles } from "@/blog";
 
-export default function Articles() {
+export default async function Articles() {
+  const articles = (await getArticles()).filter((article) => article.publish);
   return (
     <>
       <Header />
