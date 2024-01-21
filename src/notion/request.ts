@@ -1,14 +1,18 @@
-import type { BlockObjectResponse, PageObjectResponse } from '@notionhq/client/build/src/api-endpoints';
+import type {
+  BlockObjectResponse,
+  PageObjectResponse,
+} from "@notionhq/client/build/src/api-endpoints";
 
-import { databaseRetrieve, retrieveBlockChildren, retrievePage } from './api';
+import { databaseRetrieve, retrieveBlockChildren, retrievePage } from "./api";
 
 export type { BlockObjectResponse as NotionBlock };
 
 export async function getDatabaseContents(id: string) {
   const dbData = await databaseRetrieve(id);
-  console.log('notion/request >> dbData :>> ', dbData);
 
-  const objects = dbData.results.filter((result): result is PageObjectResponse => 'properties' in result);
+  const objects = dbData.results.filter(
+    (result): result is PageObjectResponse => "properties" in result
+  );
 
   return objects;
 }
@@ -16,14 +20,16 @@ export async function getDatabaseContents(id: string) {
 export async function getBlocks(id: string) {
   const data = await retrieveBlockChildren(id);
 
-  const blocks = data.results.filter((result): result is BlockObjectResponse => 'type' in result);
+  const blocks = data.results.filter(
+    (result): result is BlockObjectResponse => "type" in result
+  );
 
   return blocks;
 }
 
 export async function getPage(id: string) {
   const page = await retrievePage(id);
-  if (!('properties' in page)) {
+  if (!("properties" in page)) {
     throw new Error();
   }
 
