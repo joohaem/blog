@@ -1,5 +1,5 @@
 import { container, pageTitleRoot, title } from "./index.css";
-import Conatiner from "../Container";
+import Container from "../Container";
 
 interface PageTitleProps {
   title: string;
@@ -8,10 +8,10 @@ interface PageTitleProps {
 export default function PageTitle({ title: propTitle }: PageTitleProps) {
   return (
     <div className={pageTitleRoot}>
-      <Conatiner className={container}>
+      <Container className={container}>
         {/* TODO :: change to Typography component */}
         <div className={title}>{propTitle}</div>
-      </Conatiner>
+      </Container>
     </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Conatiner from "@/components/Container";
+import Container from "@/components/Container";
 import EmphasizedText from "@/components/EmphasizedText";
 import Heading from "@/components/Heading";
 import {
@@ -35,7 +35,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <Conatiner>
+    <Container>
       <header className={headerContainer}>
         <div className={headerLayout}>
           <Link href="/">
@@ -53,6 +53,6 @@ export default function Header() {
           </ul>
         </div>
       </header>
-    </Conatiner>
+    </Container>
   );
 }

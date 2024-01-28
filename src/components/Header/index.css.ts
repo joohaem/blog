@@ -5,7 +5,6 @@ export const headerContainer = style({
   overflowY: "hidden",
 
   margin: "0 auto",
-  padding: "0 18px",
 
   display: "flex",
   alignItems: "center",

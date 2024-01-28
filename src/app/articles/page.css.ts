@@ -7,13 +7,13 @@ export const categoryChipsWrapper = style({
   display: "flex",
   gap: "8px",
 
-  padding: "16px 12px",
+  padding: "16px 0",
 });
 
 export const articleListContainer = style({
   display: "flex",
   justifyContent: "space-between",
-  padding: "40px 24px",
+  padding: "40px 0",
 });
 
 export const articleInfoSection = style({});
