@@ -2,16 +2,19 @@ import { FC, Fragment, ReactElement } from 'react';
 
 import { NotionBlock } from '@/core/notion/request';
 
-import Callout from '../block/Callout';
-import Heading1 from '../block/Heading1';
-import Heading2 from '../block/Heading2';
-import Heading3 from '../block/Heading3';
-import ImageBlock from '../block/Image';
-import NumberedListItem from '../block/NumberedListItem';
-import Paragraph from '../block/Paragraph';
-import Quote from '../block/Quote';
-import Code from '../block/Code';
-import BulletListItem from '../block/BulletListItem';
+import {
+  Callout,
+  Heading1,
+  Heading2,
+  Heading3,
+  ImageBlock,
+  NumberedListItem,
+  Paragraph,
+  Quote,
+  Code,
+  BulletListItem,
+  Divider
+} from '../block'
 import { blocksContainer, container } from './index.css';
 
 interface BlockRendererProps {
@@ -61,6 +64,8 @@ function BlockResolver({ block, position }: { block: NotionBlock; position: numb
       return <Quote block={block} />;
     case 'callout':
       return <Callout block={block} />;
+    case 'divider':
+      return <Divider />;
     default:
       const type = block.type;
       const content = block[type as never];
