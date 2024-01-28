@@ -5,7 +5,7 @@ export const largeTitleHeading = style({
   lineHeight: "130%",
   letterSpacing: "-0.023px",
 });
-export const midiumTitleHeading = style({
+export const mediumTitleHeading = style({
   fontSize: "20px",
   lineHeight: "130%",
 });

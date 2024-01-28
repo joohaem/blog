@@ -4,18 +4,18 @@ import { format } from "date-fns";
 import { decode, encode } from "js-base64";
 
 import { getArticles } from "@/blog";
-
 import Header from "@/components/Header";
 import Container from "@/components/Container";
 import PageTitle from "@/components/PageTitle";
 import Chip from "@/components/Chip";
+import Heading from "@/components/Heading";
+
 import {
   articleListContainer,
-  catergoryChipsWrapper,
+  categoryChipsWrapper,
   thumbnailImage,
   thumbnailWrapper,
 } from "./page.css";
-import Heading from "@/components/Heading";
 
 export async function generateStaticParams() {
   const articles = await getArticles();
@@ -28,15 +28,18 @@ export async function generateStaticParams() {
   return params;
 }
 
+interface ArticlesProps {
+  // TODO :: typing
+  params?: { category?: string };
+}
+
 export default async function Articles({
   params,
-}: {
-  params: { category?: string };
-}) {
+}: ArticlesProps) {
   const currentCategory =
     params?.category && decode(decodeURIComponent(params.category));
 
-  const articles = (await getArticles()).filter((article) => article.publish);
+  const articles = await getArticles();
   // const categories = articles
   //   .map((article) => article.category)
   //   .filter((category): category is string => !!category);
@@ -45,11 +48,12 @@ export default async function Articles({
   // );
 
   return (
+    // TODO :: Layout
     <>
       <Header />
       <PageTitle title="Articles" />
       <Container>
-        <div className={catergoryChipsWrapper}>
+        <div className={categoryChipsWrapper}>
           <Link href="/">
             <Chip active={!currentCategory}>전체</Chip>
           </Link>

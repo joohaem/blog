@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import {
   largeTitleHeading,
-  midiumTitleHeading,
+  mediumTitleHeading,
   smallTitleHeading,
 } from "./index.css";
 
@@ -18,7 +18,7 @@ export default function Heading({
     return <div className={largeTitleHeading}>{children}</div>;
   }
   if (size === "title-m") {
-    return <div className={midiumTitleHeading}>{children}</div>;
+    return <div className={mediumTitleHeading}>{children}</div>;
   }
   if (size === "title-s") {
     return <div className={smallTitleHeading}>{children}</div>;

@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
-export const catergoryChipsWrapper = style({
+export const categoryChipsWrapper = style({
   position: "sticky",
   top: "0",
 
