@@ -19,11 +19,11 @@ const TABS = [
     text: "About",
     href: "/about", // TODO :: contains "/"
   },
-  {
-    id: "keyword",
-    text: "My Keywords",
-    href: "/keywords",
-  },
+  // {
+  //   id: "keyword",
+  //   text: "My Keywords",
+  //   href: "/keywords",
+  // },
   {
     id: "article",
     text: "Articles",

@@ -11,6 +11,7 @@ import Chip from "@/components/Chip";
 import Heading from "@/components/Heading";
 
 import {
+  articleInfoSection,
   articleListContainer,
   categoryChipsWrapper,
   thumbnailImage,
@@ -72,7 +73,7 @@ export default async function Articles({
             >
               <div>
                 {/* TODO :: Text component */}
-                <div>
+                <div className={articleInfoSection}>
                   {article.category} |{" "}
                   {article.publishedAt &&
                     format(article.publishedAt, "yyyy.MM.dd")}
