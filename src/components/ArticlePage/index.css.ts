@@ -41,7 +41,7 @@ export const categoryChip = style({
 export const title = style({
   marginTop: '12px',
   fontSize: '40px',
-  fontWeight: '500',
+  fontWeight: '600',
   lineHeight: '130%',
   "@media": {
     "screen and (min-width: 480px)": {

@@ -3,11 +3,11 @@ import Image from 'next/image';
 import { format } from 'date-fns';
 import { encode } from 'js-base64';
 
-import { getArticleById } from '@/blog';
-// import { BlockRenderer } from '@/components/renderer/BlockRenderer';
+import { getArticleById } from '@/core/blog';
+import Container from '@/components/Container';
+import { BlockRenderer } from '@/components/renderer/BlockRenderer';
 
 import { backLink, bodyContainer, categories, categoryChip, date, imageWrapper, label, title } from './index.css';
-import Container from '../Container';
 
 
 interface ArticlePageProps {
@@ -54,7 +54,7 @@ async function ArticlePage({ params }: ArticlePageProps) {
         {article.publishedAt && format(article.publishedAt, 'yyyy.MM.dd')}
       </div>
       <div className={bodyContainer}>
-        {/* <BlockRenderer blocks={article.blocks} /> */}
+        <BlockRenderer blocks={article.blocks} />
       </div>
     </Container>
   );

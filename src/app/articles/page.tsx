@@ -3,7 +3,7 @@ import Image from "next/image";
 import { format } from "date-fns";
 import { decode, encode } from "js-base64";
 
-import { getArticles } from "@/blog";
+import { getArticles } from "@/core/blog";
 import Header from "@/components/Header";
 import Container from "@/components/Container";
 import PageTitle from "@/components/PageTitle";

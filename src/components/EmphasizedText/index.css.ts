@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 
 export const largeEmphasizedText = style({
   fontSize: "47px",
-  fontWeight: "500",
+  fontWeight: "600",
   lineHeight: "130%",
   letterSpacing: "-0.658px",
 
@@ -15,7 +15,7 @@ export const largeEmphasizedText = style({
 });
 export const midiumEmphasizedText = style({
   fontSize: "32px",
-  fontWeight: "500",
+  fontWeight: "600",
   lineHeight: "130%",
   letterSpacing: "-0.192px",
 
@@ -28,7 +28,7 @@ export const midiumEmphasizedText = style({
 });
 export const smallEmphasizedText = style({
   fontSize: "23px",
-  fontWeight: "500",
+  fontWeight: "600",
   lineHeight: "130%",
   letterSpacing: "-0.046px",
 

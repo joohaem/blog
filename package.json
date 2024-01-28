@@ -11,13 +11,15 @@
   "dependencies": {
     "@notionhq/client": "^2.2.5",
     "@vanilla-extract/css": "^1.14.0",
+    "bright": "^0.8.4",
+    "clsx": "^2.1.0",
+    "date-fns": "^2.29.3",
+    "js-base64": "^3.7.5",
     "next": "14.0.4",
-    "react": "^18",
-    "react-dom": "^18",
     "notion-client": "^6.16.0",
     "notion-types": "^6.16.0",
-    "js-base64": "^3.7.5",
-    "date-fns": "^2.29.3"
+    "react": "^18",
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
