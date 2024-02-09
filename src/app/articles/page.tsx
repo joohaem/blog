@@ -11,12 +11,14 @@ import Chip from "@/components/Chip";
 import Heading from "@/components/Heading";
 
 import {
-  articleInfoSection,
+  articleDescription,
+  articleInfo,
   articleListContainer,
   categoryChipsWrapper,
   thumbnailImage,
   thumbnailWrapper,
 } from "./page.css";
+import Text from "@/components/Text";
 
 export async function generateStaticParams() {
   const articles = await getArticles();
@@ -49,13 +51,12 @@ export default async function Articles({
   // );
 
   return (
-    // TODO :: Layout
     <>
       <Header />
       <PageTitle title="ARTICLES" />
       <Container>
         <div className={categoryChipsWrapper}>
-          <Link href="/">
+          <Link href="/articles">
             <Chip active={!currentCategory}>전체</Chip>
           </Link>
           {/* {categories.map((category) => (
@@ -72,22 +73,31 @@ export default async function Articles({
               className={articleListContainer}
             >
               <div>
-                {/* TODO :: Text component */}
-                <div className={articleInfoSection}>
+                <Text className={articleInfo}>
                   {article.category} |{" "}
-                  {article.publishedAt &&
-                    format(article.publishedAt, "yyyy.MM.dd")}
-                </div>
-                <Heading size="title-l">{article.title}</Heading>
+                  {
+                    article.publishedAt 
+                    && format(article.publishedAt, "yyyy.MM.dd")
+                  }
+                </Text>
+                <Heading
+                  as="h2"
+                  size="title-l"
+                >
+                  {article.title}
+                </Heading>
+                <Text className={articleDescription}>
+                  {article.description}
+                </Text>
               </div>
               {article.thumbnail && (
                 <div className={thumbnailWrapper}>
                   <Image
                     src={article.thumbnail.url}
                     alt="Thumbnail"
-                    width="140"
-                    height="140"
+                    fill
                     className={thumbnailImage}
+                    objectFit="cover"
                   />
                 </div>
               )}

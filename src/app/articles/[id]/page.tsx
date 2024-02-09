@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: ArticleProps, _parent: Resolv
     description: 'SNUPI Blog',
     openGraph: {
       title: `${article.title} | SNUPI Blog`,
-      description: 'SNUPI Blog',
+      description: article.description,
       type: 'article',
       images: article.thumbnail ?? '',
     },

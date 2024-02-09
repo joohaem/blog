@@ -7,9 +7,6 @@ export const backLink = style({
 });
 
 export const label = style({
-  fontSize: "16px",
-  fontWeight: "300",
-  lineHeight: "1.25",
   color: "gray"
 });
 
@@ -52,13 +49,11 @@ export const title = style({
 })
 
 export const date = style({
-  margin: '8px 0 40px',
-  fontSize: '14px',
-  fontWeight: '300',
+  margin: '16px 0 40px',
   color: "#343a40",
   "@media": {
     "screen and (min-width: 480px)": {
-      margin: '8px 0 20px',
+      margin: '16px 0 20px',
     }
   }
 })

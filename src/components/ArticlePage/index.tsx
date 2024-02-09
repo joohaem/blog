@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { format } from 'date-fns';
-import { encode } from 'js-base64';
 
 import { getArticleById } from '@/core/blog';
-import Container from '@/components/Container';
 import { BlockRenderer } from '@/components/renderer/BlockRenderer';
+import Container from '@/components/Container';
+import Label from '@/components/Label';
+import Text from '@/components/Text';
+import Heading from '@/components/Heading';
 
 import { backLink, bodyContainer, categories, categoryChip, date, imageWrapper, label, title } from './index.css';
 
@@ -24,7 +26,7 @@ async function ArticlePage({ params }: ArticlePageProps) {
     <Container>
       <Link href='/' className={backLink}>
         <BackIcon />
-        <span className={label}>블로그 홈 가기</span>
+        <Text size='s' className={label}>블로그 홈 가기</Text>
       </Link>
       {article.thumbnail && (
         <div className={imageWrapper}>
@@ -40,22 +42,22 @@ async function ArticlePage({ params }: ArticlePageProps) {
         {article.category && (
           <>
             {/* <Link href={`/category/articles?category=${encode(article.category)}`}> */}
-              <div className={categoryChip}>
+              <Text className={categoryChip}>
                 {article.category}
-              </div>
+              </Text>
             {/* </Link> */}
           </>
         )}
       </div>
-      <h1 className={title}>
+      <Heading as="h1" size='title-l' className={title}>
         {article.title}
-      </h1>
-      <div className={date}>
+      </Heading>
+      <Label size='m' className={date}>
         {article.publishedAt && format(article.publishedAt, 'yyyy.MM.dd')}
-      </div>
-      <div className={bodyContainer}>
+      </Label>
+      <Text className={bodyContainer}>
         <BlockRenderer blocks={article.blocks} />
-      </div>
+      </Text>
     </Container>
   );
 }

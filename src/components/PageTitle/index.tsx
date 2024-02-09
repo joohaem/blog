@@ -11,6 +11,7 @@ export default function PageTitle({ title: propTitle }: PageTitleProps) {
     <div className={pageTitleRoot}>
       <Container className={container}>
         <Heading 
+          as="h1"
           size='display-l'
           weight="extraLight"
           className={title}

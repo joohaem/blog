@@ -8,7 +8,7 @@ export async function getArticles() {
   const objects = await getDatabaseContents(SOURCE_DATABASE);
 
   const articles = objects.map(({ properties, id }) => {
-    const { title, thumbnail, publishedAt, category} = extractArticleProperties(properties);
+    const { title, thumbnail, publishedAt, category, description } = extractArticleProperties(properties);
 
     return {
       id,
@@ -16,6 +16,7 @@ export async function getArticles() {
       thumbnail,
       publishedAt,
       category,
+      description
     };
   });
 
@@ -25,13 +26,14 @@ export async function getArticles() {
 export async function getArticleById(id: string) {
   const [meta, blocks] = await Promise.all([getPage(id), getBlocks(id)]);
 
-  const { title, publishedAt, category, thumbnail } = extractArticleProperties(meta.properties);
+  const { title, publishedAt, category, thumbnail, description } = extractArticleProperties(meta.properties);
 
   return {
     title,
     publishedAt,
     category,
     thumbnail,
+    description,
     blocks,
   };
 }
@@ -42,12 +44,14 @@ function extractArticleProperties(properties: PageObjectResponse['properties']) 
   const title = resolver.title('title');
   const publishedAt = resolver.date('publishedAt');
   const category = resolver.select('category');
+  const description = resolver.richText('description');
   const thumbnailFiles = resolver.files('thumbnail');
   const thumbnail = thumbnailFiles.length > 0 ? thumbnailFiles[0] : null;
 
   return {
     title,
     publishedAt,
+    description,
     category,
     thumbnail,
   };
