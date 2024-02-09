@@ -10,9 +10,10 @@ import {
 } from "./index.css";
 
 
-interface HeadingProps {
+interface TextProps {
   size?: "l" | "m" | "s";
   weight?: 'regular' | 'medium';
+  className?: string;
 };
 
 const sizeCss = {
@@ -25,17 +26,19 @@ const weightCss = {
   "medium": mediumWeight 
 } as const
 
-export default function Heading({
+export default function Text({
   size = "m",
   weight = 'regular',
+  className,
   children
-}: PropsWithChildren<HeadingProps>) {
+}: PropsWithChildren<TextProps>) {
   return (
     <p 
       className={
         clsx(
           sizeCss[size],
-          weightCss[weight]
+          weightCss[weight],
+          className
         )
       }
     >

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Container from "@/components/Container";
 import EmphasizedText from "@/components/EmphasizedText";
-import Heading from "@/components/Heading";
+import Text from "@/components/Text";
 import {
   headerContainer,
   headerLayout,
@@ -16,7 +16,7 @@ import {
 const TABS = [
   {
     id: "about",
-    text: "About",
+    text: "ABOUT",
     href: "/about", // TODO :: contains "/"
   },
   // {
@@ -26,7 +26,7 @@ const TABS = [
   // },
   {
     id: "article",
-    text: "Articles",
+    text: "ARTICLES",
     href: "/articles",
   },
 ];
@@ -43,10 +43,9 @@ export default function Header() {
           </Link>
           <ul className={tabsWrapper}>
             {TABS.map(({ id, text, href }) => (
-              // TODO :: color change with Heading props
               <li className={pathname === href ? tab : inactiveTab} key={id}>
                 <Link href={href}>
-                  <Heading size="title-s">{text}</Heading>
+                  <Text size="m" weight='medium'>{text}</Text>
                 </Link>
               </li>
             ))}

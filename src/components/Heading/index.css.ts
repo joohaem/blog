@@ -3,7 +3,7 @@ import { style } from "@vanilla-extract/css";
 export const largeDisplayHeading = style({
   fontSize: "48px",
   lineHeight: "130%",
-  letterSpacing: "0.05em",
+  letterSpacing: "0.08em",
 });
 export const largeTitleHeading = style({
   fontSize: "23px",
@@ -19,9 +19,12 @@ export const smallTitleHeading = style({
   lineHeight: "130%",
 });
 
+export const extraLightWeight = style({
+  fontWeight: '200'
+})
 export const lightWeight = style({
-  fontWeight: 'light'
+  fontWeight: '300'
 })
 export const mediumWeight = style({
-  fontWeight: 'medium'
+  fontWeight: '500'
 })

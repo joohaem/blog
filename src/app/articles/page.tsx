@@ -52,7 +52,7 @@ export default async function Articles({
     // TODO :: Layout
     <>
       <Header />
-      <PageTitle title="Articles" />
+      <PageTitle title="ARTICLES" />
       <Container>
         <div className={categoryChipsWrapper}>
           <Link href="/">

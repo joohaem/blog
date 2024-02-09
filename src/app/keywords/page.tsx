@@ -1,11 +1,11 @@
 import Header from "@/components/Header";
 import PageTitle from "@/components/PageTitle";
 
-export default function Keyowrds() {
+export default function Keywords() {
   return (
     <>
       <Header />
-      <PageTitle title="My Keywords" />
+      <PageTitle title="MY KEYWORDS" />
       page
     </>
   );

@@ -1,5 +1,6 @@
 import { container, pageTitleRoot, title } from "./index.css";
-import Container from "../Container";
+import Container from "@/components/Container";
+import Heading from "@/components/Heading";
 
 interface PageTitleProps {
   title: string;
@@ -9,8 +10,13 @@ export default function PageTitle({ title: propTitle }: PageTitleProps) {
   return (
     <div className={pageTitleRoot}>
       <Container className={container}>
-        {/* TODO :: change to Typography component */}
-        <div className={title}>{propTitle}</div>
+        <Heading 
+          size='display-l'
+          weight="extraLight"
+          className={title}
+        >
+          {propTitle}
+        </Heading>
       </Container>
     </div>
   );

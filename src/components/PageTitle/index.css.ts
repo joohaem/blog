@@ -6,13 +6,13 @@ export const pageTitleRoot = style({
 });
 
 export const container = style({
-  padding: "155px 27px 0",
+  position: "relative",
+  padding: "155px 27px 0px",
 });
 
 export const title = style({
+  position: "absolute",
+  top: "155px",
+  left: "27px",
   color: "#fff",
-  fontSize: "48px",
-  fontWeight: "300",
-  lineHeight: "130%",
-  letterSpacing: "2.4px",
 });

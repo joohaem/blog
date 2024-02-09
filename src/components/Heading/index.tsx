@@ -2,6 +2,7 @@ import { PropsWithChildren } from "react";
 import clsx from "clsx";
 
 import {
+  extraLightWeight,
   largeDisplayHeading,
   largeTitleHeading,
   lightWeight,
@@ -13,7 +14,8 @@ import {
 
 interface HeadingProps extends Omit<HeadingTagProps, 'className'> {
   size?: "display-l" | "title-l" | "title-m" | "title-s";
-  weight?: 'light' | 'medium';
+  weight?: 'extraLight' | 'light' | 'medium';
+  className?: string;
 };
 
 const sizeCss = {
@@ -23,6 +25,7 @@ const sizeCss = {
   "title-s": smallTitleHeading
 } as const
 const weightCss = {
+  "extraLight": extraLightWeight,
   "light": lightWeight,
   "medium": mediumWeight 
 } as const
@@ -30,6 +33,7 @@ const weightCss = {
 export default function Heading({
   size = "title-m",
   weight = 'medium',
+  className,
   ...props
 }: HeadingProps) {
   return (
@@ -37,7 +41,8 @@ export default function Heading({
       className={
         clsx(
           sizeCss[size],
-          weightCss[weight]
+          weightCss[weight],
+          className
         )
       }
       {...props}

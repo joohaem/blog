@@ -41,7 +41,7 @@ export const tab = style({
 export const inactiveTab = style([
   tab,
   {
-    color: "#555",
+    color: "rgba(0, 0, 0, 0.5)",
 
     ":hover": {
       color: "#000",

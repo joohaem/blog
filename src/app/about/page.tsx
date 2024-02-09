@@ -6,7 +6,7 @@ export default function About() {
     // TODO :: Layout
     <>
       <Header />
-      <PageTitle title="My Keywords" />
+      <PageTitle title="ABOUT" />
       page
     </>
   );

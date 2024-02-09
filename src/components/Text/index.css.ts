@@ -14,8 +14,8 @@ export const smallText = style({
 });
 
 export const regularWeight = style({
-  fontWeight: 'regular'
+  fontWeight: '400'
 })
 export const mediumWeight = style({
-  fontWeight: 'medium'
+  fontWeight: '500'
 })

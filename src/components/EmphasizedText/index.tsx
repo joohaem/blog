@@ -4,9 +4,11 @@ import {
   mediumEmphasizedText,
   smallEmphasizedText,
 } from "./index.css";
+import clsx from "clsx";
 
 interface EmphasizedTextProps {
   size?: "l" | "m" | "s";
+  className?: string;
 }
 
 const sizeCss = {
@@ -17,10 +19,18 @@ const sizeCss = {
 
 export default function EmphasizedText({
   size = "m",
+  className,
   children,
 }: PropsWithChildren<EmphasizedTextProps>) {
   return (
-    <strong className={sizeCss[size]}>
+    <strong 
+      className={
+        clsx(
+          sizeCss[size],
+          className
+        )
+      }
+    >
       {children}
     </strong>
   );

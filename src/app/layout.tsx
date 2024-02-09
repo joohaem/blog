@@ -19,6 +19,10 @@ export const metadata: Metadata = {
 const pretendardFont = localFont({
   src: [
     {
+      path: "./fonts/Pretendard-ExtraLight.woff2",
+      weight: "200",
+    },
+    {
       path: "./fonts/Pretendard-Light.woff2",
       weight: "300",
     },

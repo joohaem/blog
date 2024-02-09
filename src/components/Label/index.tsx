@@ -11,6 +11,7 @@ import {
 
 interface LabelProps {
   size?: "xl" | "l" | "m" | "s";
+  className?: string;
 };
 
 const sizeCss = {
@@ -22,13 +23,15 @@ const sizeCss = {
 
 export default function Label({
   size = "m",
+  className,
   children,
 }: PropsWithChildren<LabelProps>) {
   return (
     <span 
       className={
         clsx(
-          sizeCss[size]
+          sizeCss[size],
+          className
         )
       }
     >
