@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import {
   largeEmphasizedText,
-  midiumEmphasizedText,
+  mediumEmphasizedText,
   smallEmphasizedText,
 } from "./index.css";
 
@@ -9,18 +9,19 @@ interface EmphasizedTextProps {
   size?: "l" | "m" | "s";
 }
 
+const sizeCss = {
+  "l": largeEmphasizedText,
+  "m": mediumEmphasizedText,
+  "s": smallEmphasizedText
+}
+
 export default function EmphasizedText({
   size = "m",
   children,
 }: PropsWithChildren<EmphasizedTextProps>) {
-  if (size === "l") {
-    return <strong className={largeEmphasizedText}>{children}</strong>;
-  }
-  if (size === "m") {
-    return <strong className={midiumEmphasizedText}>{children}</strong>;
-  }
-  if (size === "s") {
-    return <strong className={smallEmphasizedText}>{children}</strong>;
-  }
-  throw new Error("EmphasizedText :: size not found");
+  return (
+    <strong className={sizeCss[size]}>
+      {children}
+    </strong>
+  );
 }

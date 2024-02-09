@@ -13,7 +13,7 @@ export const largeEmphasizedText = style({
     },
   },
 });
-export const midiumEmphasizedText = style({
+export const mediumEmphasizedText = style({
   fontSize: "32px",
   fontWeight: "600",
   lineHeight: "130%",
