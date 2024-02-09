@@ -1,4 +1,4 @@
-import BaseImage from "next/image"
+import Image from "next/image"
 
 import { PickNotionBlock } from '@/core/notion/types';
 import { imageWrapper } from "./index.css";
@@ -7,7 +7,7 @@ interface ImageProps {
   block: PickNotionBlock<'image'>;
 }
 
-const Image = ({ block }: ImageProps) => {
+const ImageBlock = ({ block }: ImageProps) => {
   const url = (() => {
     if (block.image.type === 'file') {
       return block.image.file.url;
@@ -19,7 +19,7 @@ const Image = ({ block }: ImageProps) => {
 
   return (
     <div className={imageWrapper}>
-      <BaseImage
+      <Image
         src={url}
         alt={block.image.caption.map((text) => text.plain_text).join('') ?? 'Article Image'}
         fill
@@ -29,4 +29,4 @@ const Image = ({ block }: ImageProps) => {
   );
 };
 
-export default Image;
+export default ImageBlock;
