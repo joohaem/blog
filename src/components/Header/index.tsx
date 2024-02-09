@@ -1,23 +1,20 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Container from "@/components/Container";
 import EmphasizedText from "@/components/EmphasizedText";
-import Text from "@/components/Text";
+import Tab, { Tab as TTab } from "@/components/Tab";
+
 import {
   headerContainer,
   headerLayout,
-  inactiveTab,
-  tab,
   tabsWrapper,
 } from "./index.css";
 
-const TABS = [
+const TABS: TTab[] = [
   {
     id: "about",
     text: "ABOUT",
-    href: "/about", // TODO :: contains "/"
+    href: "/about",
+    isParent: true
   },
   // {
   //   id: "keyword",
@@ -32,8 +29,6 @@ const TABS = [
 ];
 
 export default function Header() {
-  const pathname = usePathname();
-
   return (
     <Container>
       <header className={headerContainer}>
@@ -42,12 +37,14 @@ export default function Header() {
             <EmphasizedText size="s">SNUPI</EmphasizedText>
           </Link>
           <ul className={tabsWrapper}>
-            {TABS.map(({ id, text, href }) => (
-              <li className={pathname === href ? tab : inactiveTab} key={id}>
-                <Link href={href}>
-                  <Text size="m" weight='medium'>{text}</Text>
-                </Link>
-              </li>
+            {TABS.map(({ id, text, href, isParent }) => (
+              <Tab
+                key={id}
+                id={id}
+                text={text}
+                href={href}
+                isParent={isParent}
+              />
             ))}
           </ul>
         </div>

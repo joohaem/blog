@@ -1,4 +1,6 @@
 import React, { HTMLAttributes, PropsWithChildren } from "react";
+import clsx from "clsx";
+
 import { containerRoot } from "./index.css";
 
 interface ContainerProps {
@@ -9,5 +11,5 @@ export default function Container({
   children,
   className: propClassName,
 }: PropsWithChildren<ContainerProps>) {
-  return <div className={`${propClassName} ${containerRoot}`}>{children}</div>;
+  return <div className={clsx(containerRoot, propClassName)}>{children}</div>;
 }

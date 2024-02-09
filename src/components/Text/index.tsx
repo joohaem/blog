@@ -7,12 +7,13 @@ import {
   mediumText,
   mediumWeight,
   smallText,
+  lightWeight,
 } from "./index.css";
 
 
-interface TextProps {
+export interface TextProps {
   size?: "l" | "m" | "s";
-  weight?: 'regular' | 'medium';
+  weight?: 'light' | 'regular' | 'medium';
   className?: string;
 };
 
@@ -22,6 +23,7 @@ const sizeCss = {
   "s": smallText
 } as const
 const weightCss = {
+  "light": lightWeight,
   "regular": regularWeight,
   "medium": mediumWeight 
 } as const

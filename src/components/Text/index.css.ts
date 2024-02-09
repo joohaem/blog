@@ -13,6 +13,9 @@ export const smallText = style({
   lineHeight: "150%",
 });
 
+export const lightWeight = style({
+  fontWeight: '300'
+})
 export const regularWeight = style({
   fontWeight: '400'
 })

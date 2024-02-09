@@ -7,12 +7,11 @@ export const pageTitleRoot = style({
 
 export const container = style({
   position: "relative",
-  padding: "155px 27px 0px",
 });
 
 export const title = style({
   position: "absolute",
   top: "155px",
-  left: "27px",
+  left: "18px",
   color: "#fff",
 });
