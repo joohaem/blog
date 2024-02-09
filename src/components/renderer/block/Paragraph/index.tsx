@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { PickNotionBlock } from '@/core/notion/types';
 
 import RichTextRenderer from '../../RichTextRenderer';
-import { text } from './index.css';
+import Text from '@/components/Text';
 
 interface ParagraphProps {
   block: PickNotionBlock<'paragraph'>;
@@ -14,7 +14,7 @@ const Paragraph: FC<ParagraphProps> = ({ block }) => {
     <RichTextRenderer
       richText={block.paragraph.rich_text}
       render={(children) => (
-        <p className={text}>{children}</p>
+        <Text>{children}</Text>
       )}
     />
   );

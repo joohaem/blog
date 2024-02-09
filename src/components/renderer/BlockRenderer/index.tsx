@@ -1,4 +1,4 @@
-import { FC, Fragment, ReactElement } from 'react';
+import { FC } from 'react';
 
 import { NotionBlock } from '@/core/notion/request';
 
@@ -70,7 +70,7 @@ function BlockResolver({ block, position }: { block: NotionBlock; position: numb
       const type = block.type;
       const content = block[type as never];
       return (
-        <div className='whitespace-pre-wrap'>
+        <div style={{ whiteSpace: 'pre-wrap' }}>
           Unknown {type}: {JSON.stringify(content, null, 2)}
         </div>
       );

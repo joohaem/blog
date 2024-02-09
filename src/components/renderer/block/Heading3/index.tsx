@@ -4,6 +4,7 @@ import { PickNotionBlock } from '@/core/notion/types';
 
 import RichTextRenderer from '../../RichTextRenderer';
 import { text } from './index.css';
+import Heading from '@/components/Heading';
 
 interface Heading3Props {
   block: PickNotionBlock<'heading_3'>;
@@ -14,7 +15,7 @@ const Heading3: FC<Heading3Props> = ({ block }) => {
     <RichTextRenderer
       richText={block.heading_3.rich_text}
       render={(children) => (
-        <h3 className={text}>{children}</h3>
+        <Heading as='h4' size='title-l' weight='semiBold' className={text}>{children}</Heading>
       )}
     />
   );

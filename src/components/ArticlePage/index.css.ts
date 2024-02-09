@@ -31,19 +31,14 @@ export const categories = style({
 export const categoryChip = style({
   borderRadius: "13px",
   padding: "6px 12px",
-  lineHeight: "1.2",
   backgroundColor: "#FFC8DC"
 });
 
 export const title = style({
   marginTop: '40px',
-  fontSize: '40px',
-  fontWeight: '600',
-  lineHeight: '130%',
   "@media": {
     "screen and (min-width: 480px)": {
       marginTop: '20px',
-      fontSize: '28px'
     }
   }
 })

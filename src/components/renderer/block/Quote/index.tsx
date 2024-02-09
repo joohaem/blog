@@ -4,6 +4,7 @@ import { PickNotionBlock } from '@/core/notion/types';
 
 import RichTextRenderer from '../../RichTextRenderer';
 import { container, quoteIconWrapper } from './index.css';
+import Text from '@/components/Text';
 
 interface QuoteProps {
   block: PickNotionBlock<'quote'>;
@@ -16,7 +17,9 @@ const Quote: FC<QuoteProps> = ({ block }) => {
       render={(children) => (
         <div className={container}>
           <div className={quoteIconWrapper}>{quoteIcon}</div>
-          {children}
+          <Text size='l'>
+            {children}
+          </Text>
         </div>
       )}
     />

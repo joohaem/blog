@@ -2,8 +2,9 @@ import { getBlocks } from '@/core/notion/request';
 import { PickNotionBlock } from '@/core/notion/types';
 
 import RichTextRenderer from '../../RichTextRenderer';
-import { bodyContainer, container, number, textWrapper } from './index.css';
+import { bodyContainer, container, number } from './index.css';
 import { BlockRenderer } from '../../BlockRenderer';
+import Text from '@/components/Text';
 
 interface NumberedListItemProps {
   block: PickNotionBlock<'numbered_list_item'>;
@@ -26,7 +27,7 @@ const NumberedListItem = async ({ block, num }: NumberedListItemProps) => {
         <div className={container}>
           <div className={number}>{num}.</div>
           <div className={bodyContainer}>
-            <div className={textWrapper}>{text}</div>
+            <Text>{text}</Text>
             {children}
           </div>
         </div>

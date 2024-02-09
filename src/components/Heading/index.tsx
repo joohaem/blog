@@ -4,22 +4,25 @@ import clsx from "clsx";
 import {
   extraLightWeight,
   largeDisplayHeading,
+  largeHeadlineHeading,
   largeTitleHeading,
   lightWeight,
   mediumTitleHeading,
   mediumWeight,
+  semiBoldWeight,
   smallTitleHeading,
 } from "./index.css";
 
 
 interface HeadingProps extends Omit<HeadingTagProps, 'className'> {
-  size?: "display-l" | "title-l" | "title-m" | "title-s";
-  weight?: 'extraLight' | 'light' | 'medium';
+  size?: "display-l" | "headline-l" | "title-l" | "title-m" | "title-s";
+  weight?: 'extraLight' | 'light' | 'medium' | 'semiBold';
   className?: string;
 };
 
 const sizeCss = {
   "display-l": largeDisplayHeading,
+  "headline-l": largeHeadlineHeading,
   "title-l": largeTitleHeading,
   "title-m": mediumTitleHeading,
   "title-s": smallTitleHeading
@@ -27,7 +30,8 @@ const sizeCss = {
 const weightCss = {
   "extraLight": extraLightWeight,
   "light": lightWeight,
-  "medium": mediumWeight 
+  "medium": mediumWeight,
+  "semiBold": semiBoldWeight
 } as const
 
 export default function Heading({

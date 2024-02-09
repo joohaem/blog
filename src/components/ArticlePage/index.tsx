@@ -24,9 +24,9 @@ async function ArticlePage({ params }: ArticlePageProps) {
 
   return (
     <Container>
-      <Link href='/' className={backLink}>
+      <Link href='/articles' className={backLink}>
         <BackIcon />
-        <Text size='s' className={label}>블로그 홈 가기</Text>
+        <Text size='s' className={label}>뒤로 가기</Text>
       </Link>
       {article.thumbnail && (
         <div className={imageWrapper}>
@@ -49,7 +49,7 @@ async function ArticlePage({ params }: ArticlePageProps) {
           </>
         )}
       </div>
-      <Heading as="h1" size='title-l' className={title}>
+      <Heading as="h1" size='headline-l' className={title}>
         {article.title}
       </Heading>
       <Label size='m' className={date}>

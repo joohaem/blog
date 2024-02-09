@@ -5,6 +5,10 @@ export const largeDisplayHeading = style({
   lineHeight: "130%",
   letterSpacing: "0.08em",
 });
+export const largeHeadlineHeading = style({
+  fontSize: "33px",
+  lineHeight: "130%",
+});
 export const largeTitleHeading = style({
   fontSize: "23px",
   lineHeight: "130%",
@@ -27,4 +31,7 @@ export const lightWeight = style({
 })
 export const mediumWeight = style({
   fontWeight: '500'
+})
+export const semiBoldWeight = style({
+  fontWeight: '600'
 })
