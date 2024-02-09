@@ -42,7 +42,7 @@ export default async function Articles({
   const currentCategory =
     params?.category && decode(decodeURIComponent(params.category));
 
-  const articles = await getArticles();
+  const articles = (await getArticles()).filter(({ isPublished }) => isPublished);
   // const categories = articles
   //   .map((article) => article.category)
   //   .filter((category): category is string => !!category);

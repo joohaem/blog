@@ -8,7 +8,7 @@ export async function getArticles() {
   const objects = await getDatabaseContents(SOURCE_DATABASE);
 
   const articles = objects.map(({ properties, id }) => {
-    const { title, thumbnail, publishedAt, category, description } = extractArticleProperties(properties);
+    const { title, thumbnail, publishedAt, category, description, isPublished } = extractArticleProperties(properties);
 
     return {
       id,
@@ -16,7 +16,8 @@ export async function getArticles() {
       thumbnail,
       publishedAt,
       category,
-      description
+      description,
+      isPublished
     };
   });
 
@@ -45,6 +46,7 @@ function extractArticleProperties(properties: PageObjectResponse['properties']) 
   const publishedAt = resolver.date('publishedAt');
   const category = resolver.select('category');
   const description = resolver.richText('description');
+  const isPublished = resolver.checkbox('isPublished');
   const thumbnailFiles = resolver.files('thumbnail');
   const thumbnail = thumbnailFiles.length > 0 ? thumbnailFiles[0] : null;
 
@@ -54,5 +56,6 @@ function extractArticleProperties(properties: PageObjectResponse['properties']) 
     description,
     category,
     thumbnail,
+    isPublished
   };
 }
