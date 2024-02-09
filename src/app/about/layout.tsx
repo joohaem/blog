@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import Header from "@/components/Header"
 import PageTitle from "@/components/PageTitle"
 import { PropsWithChildren } from "react"
-import { tabsContainer } from "./layout.css";
+import { contentsContainer, tabsContainer } from "./layout.css";
 import Tab, { Tab as TTab } from "@/components/Tab";
 
 const TABS: TTab[] = [
@@ -54,6 +54,8 @@ const Layout = ({children}: PropsWithChildren) => {
             ))
           }
         </div>
+      </Container>
+      <Container className={contentsContainer}>    
         {children}
       </Container>
     </>

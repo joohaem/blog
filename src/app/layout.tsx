@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import { BASE_URL } from "./const";
+import { bodyContainer } from "./layout.css";
 
 export const metadata: Metadata = {
   title: "SNUPI Blog",
@@ -53,7 +54,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${pretendardFont.className}`}>
-      <body>{children}</body>
+      <body className={bodyContainer}>{children}</body>
     </html>
   );
 }
