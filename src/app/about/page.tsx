@@ -21,7 +21,7 @@ const CONTENTS = [
   {
     id: 'blog',
     href: '/about/blog',
-    imageSrc: '/aboutBlog.jpeg',
+    imageSrc: '/aboutBlog.png',
     title: 'BLOG',
     description: '이 공간은 저의 사고를 담아내는 공간이었으면 좋겠습니다. 개발을 하며 만난 개념들을 깊게 조사하고 탐구한 뒤, 가장 논리적인 해결방안으로 문제를 해결하려 노력합니다.',
   },
