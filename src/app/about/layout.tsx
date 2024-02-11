@@ -3,34 +3,38 @@ import Header from "@/components/Header"
 import PageTitle from "@/components/PageTitle"
 import { PropsWithChildren } from "react"
 import { contentsContainer, tabsContainer } from "./layout.css";
-import Tab, { Tab as TTab } from "@/components/Tab";
+import RouteTab, { RouteTab as TRouteTab } from "@/components/RouteTab";
 
-const TABS: TTab[] = [
+const TABS: TRouteTab[] = [
   {
     id: "all",
     text: "ALL",
     href: "/about",
-    isParent: true
+    exact: true
   },
   {
     id: "life",
     text: "LIFE",
     href: "/about/life",
+    exact: true
   },
   {
     id: "engineering",
     text: "ENGINEERING",
     href: "/about/engineering",
+    exact: true
   },
   {
     id: "blog",
     text: "BLOG",
     href: "/about/blog",
+    exact: true
   },
   {
     id: "contact",
     text: "CONTACT",
     href: "/about/contact",
+    exact: true
   },
 ];
 
@@ -42,13 +46,13 @@ const Layout = ({children}: PropsWithChildren) => {
       <Container>
         <div className={tabsContainer}>
           {
-            TABS.map(({ id, text, href, isParent }) => (
-              <Tab
+            TABS.map(({ id, text, href, exact }) => (
+              <RouteTab
                 key={id}
                 id={id}
                 text={text}
                 href={href}
-                isParent={isParent}
+                exact={exact}
                 weight="light"
               />
             ))

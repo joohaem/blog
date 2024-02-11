@@ -8,25 +8,25 @@ import {
 import Text, { TextProps } from "@/components/Text";
 import { usePathname } from "next/navigation";
 
-export type Tab = {
+export type RouteTab = {
   id: string;
   text: string;
   href: string;
-  isParent?: boolean;
+  exact?: boolean;
 }
-interface TabProps extends Tab, TextProps {}
+interface RouteTabProps extends RouteTab, TextProps {}
 
-const Tab = ({
+const RouteTab = ({
   text,
   href,
-  isParent,
+  exact,
   ...props
-}: TabProps) => {
+}: RouteTabProps) => {
   const pathname = usePathname();
   return (
     <li 
       className={
-        isParent
+        exact
         ? pathname === href ? tab : inactiveTab
         : pathname.startsWith(href) ? tab : inactiveTab
       }
@@ -38,4 +38,4 @@ const Tab = ({
   )
 }
 
-export default Tab;
+export default RouteTab;

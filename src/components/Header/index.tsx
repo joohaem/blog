@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/Container";
 import EmphasizedText from "@/components/EmphasizedText";
-import Tab, { Tab as TTab } from "@/components/Tab";
+import RouteTab, { RouteTab as TRouteTab } from "@/components/RouteTab";
 
 import {
   headerContainer,
@@ -9,12 +9,11 @@ import {
   tabsWrapper,
 } from "./index.css";
 
-const TABS: TTab[] = [
+const TABS: TRouteTab[] = [
   {
     id: "about",
     text: "ABOUT",
     href: "/about",
-    isParent: true
   },
   // {
   //   id: "keyword",
@@ -37,13 +36,13 @@ export default function Header() {
             <EmphasizedText size="s">SNUPI</EmphasizedText>
           </Link>
           <ul className={tabsWrapper}>
-            {TABS.map(({ id, text, href, isParent }) => (
-              <Tab
+            {TABS.map(({ id, text, href, exact }) => (
+              <RouteTab
                 key={id}
                 id={id}
                 text={text}
                 href={href}
-                isParent={isParent}
+                exact={exact}
               />
             ))}
           </ul>
