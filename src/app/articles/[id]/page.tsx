@@ -1,5 +1,5 @@
 import ArticlePage from '@/components/ArticlePage';
-import Comments from '@/components/Commnets';
+import Comments from '@/components/Comments';
 import Container from '@/components/Container';
 import { getArticleById, getArticles } from '@/core/blog';
 import { Metadata, ResolvingMetadata } from 'next';
