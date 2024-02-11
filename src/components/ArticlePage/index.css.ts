@@ -10,13 +10,17 @@ export const label = style({
   color: "gray"
 });
 
-export const imageWrapper = style({
+export const thumbnailImageWrapper = style({
   position: "relative",
   width: "100%",
   height: "400px",
 
   overflow: "clip",
 });
+
+export const thumbnailImage = style({
+  objectFit: 'contain'
+})
 
 export const categories = style({
   display: "flex",

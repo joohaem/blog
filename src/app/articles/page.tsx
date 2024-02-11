@@ -97,7 +97,6 @@ export default async function Articles({
                     alt="Thumbnail"
                     fill
                     className={thumbnailImage}
-                    objectFit="cover"
                   />
                 </div>
               )}

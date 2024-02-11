@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-import About from "./about/page";
+import Header from "@/components/Header";
 
 export default function Home() {
   const router = useRouter();
@@ -12,5 +12,5 @@ export default function Home() {
     router.replace("/about")
   }, [router]);
 
-  return <About />;
+  return <Header />;
 }

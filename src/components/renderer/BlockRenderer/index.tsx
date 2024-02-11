@@ -8,6 +8,7 @@ import {
   Heading2,
   Heading3,
   ImageBlock,
+  EmbeddedImageBlock,
   NumberedListItem,
   Paragraph,
   Quote,
@@ -60,6 +61,8 @@ function BlockResolver({ block, position }: { block: NotionBlock; position: numb
       return <Code block={block} />;
     case 'image':
       return <ImageBlock block={block} />;
+    case 'embed':
+      return <EmbeddedImageBlock block={block} />;
     case 'quote':
       return <Quote block={block} />;
     case 'callout':

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { content, contentImageWrapper, contentsContainer, descriptionWrapper } from "./page.css";
+import { content, contentImage, contentImageWrapper, contentsContainer, descriptionWrapper } from "./page.css";
 import Text from "@/components/Text";
 import Link from "next/link";
 
@@ -14,14 +14,14 @@ const CONTENTS = [
   {
     id: 'engineering',
     href: '/about/engineering',
-    imageSrc: '/aboutEngineering.jpeg',
+    imageSrc: '/aboutEngineering.png',
     title: 'ENGINEERING',
     description: '제가 주도적으로 행하는 일 중 하나는 Engineering입니다. 그 중 웹 기반의 Frontend 작업을 주로 합니다.',
   },
   {
     id: 'blog',
     href: '/about/blog',
-    imageSrc: '/aboutBlog.png',
+    imageSrc: '/aboutBlog.jpeg',
     title: 'BLOG',
     description: '이 공간은 저의 사고를 담아내는 공간이었으면 좋겠습니다. 개발을 하며 만난 개념들을 깊게 조사하고 탐구한 뒤, 가장 논리적인 해결방안으로 문제를 해결하려 노력합니다.',
   },
@@ -49,7 +49,7 @@ export default function About() {
                   src={imageSrc}
                   alt={id}
                   fill
-                  objectFit='cover'
+                  className={contentImage}
                 />
               </div>
               <Text size="l">

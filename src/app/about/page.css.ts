@@ -51,3 +51,7 @@ export const descriptionWrapper = style({
 
   color: 'rgba(0, 0, 0, 0.5)',
 })
+
+export const contentImage = style({
+  objectFit: 'cover'
+})

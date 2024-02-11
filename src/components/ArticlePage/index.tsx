@@ -9,7 +9,7 @@ import Label from '@/components/Label';
 import Text from '@/components/Text';
 import Heading from '@/components/Heading';
 
-import { backLink, bodyContainer, categories, categoryChip, date, imageWrapper, label, title } from './index.css';
+import { backLink, bodyContainer, categories, categoryChip, date, thumbnailImageWrapper, label, thumbnailImage, title } from './index.css';
 
 
 interface ArticlePageProps {
@@ -29,12 +29,12 @@ async function ArticlePage({ params }: ArticlePageProps) {
         <Text size='s' className={label}>뒤로 가기</Text>
       </Link>
       {article.thumbnail && (
-        <div className={imageWrapper}>
+        <div className={thumbnailImageWrapper}>
           <Image 
             src={article.thumbnail.url} 
             alt='Thumbnail Image' 
             fill 
-            objectFit='contain'
+            className={thumbnailImage}
           />
         </div>
       )}

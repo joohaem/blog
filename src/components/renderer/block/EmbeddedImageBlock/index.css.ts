@@ -7,3 +7,7 @@ export const imageWrapper = style({
 
   overflow: "clip",
 });
+
+export const image = style({
+  objectFit: 'contain'
+})
