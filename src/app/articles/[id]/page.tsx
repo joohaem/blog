@@ -1,4 +1,6 @@
 import ArticlePage from '@/components/ArticlePage';
+import Comments from '@/components/Commnets';
+import Container from '@/components/Container';
 import { getArticleById, getArticles } from '@/core/blog';
 import { Metadata, ResolvingMetadata } from 'next';
 
@@ -35,7 +37,10 @@ export async function generateMetadata({ params }: ArticleProps, _parent: Resolv
 
 async function Article({ params }: ArticleProps) {
   return (
-    <ArticlePage params={params} />
+    <Container>
+      <ArticlePage params={params} />
+      <Comments />
+    </Container>
   );
 }
 

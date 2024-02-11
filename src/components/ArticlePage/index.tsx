@@ -4,7 +4,6 @@ import { format } from 'date-fns';
 
 import { getArticleById } from '@/core/blog';
 import { BlockRenderer } from '@/components/renderer/BlockRenderer';
-import Container from '@/components/Container';
 import Label from '@/components/Label';
 import Text from '@/components/Text';
 import Heading from '@/components/Heading';
@@ -23,7 +22,7 @@ async function ArticlePage({ params }: ArticlePageProps) {
   const article = await getArticleById(id);
 
   return (
-    <Container>
+    <>
       <Link href='/articles' className={backLink}>
         <BackIcon />
         <Text size='s' className={label}>뒤로 가기</Text>
@@ -58,7 +57,7 @@ async function ArticlePage({ params }: ArticlePageProps) {
       <Text className={bodyContainer}>
         <BlockRenderer blocks={article.blocks} />
       </Text>
-    </Container>
+    </>
   );
 }
 
