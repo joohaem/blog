@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Roboto_Mono } from "next/font/google";
 import localFont from "next/font/local";
 
 import "./globals.css";
 import { BASE_URL } from "./const";
 import { bodyContainer } from "./layout.css";
+import { GOOGLE_VERIFICATION_CODE } from "@/consts/env";
 
 export const metadata: Metadata = {
   title: "SNUPI Blog",
@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     url: BASE_URL ?? undefined,
     type: "website",
   },
+  verification: {
+    google: GOOGLE_VERIFICATION_CODE ?? undefined
+  }
 };
 
 const pretendardFont = localFont({
