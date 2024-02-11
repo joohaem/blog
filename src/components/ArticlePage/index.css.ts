@@ -26,7 +26,7 @@ export const categories = style({
   display: "flex",
   marginTop: "32px",
   "@media": {
-    "screen and (min-width: 480px)": {
+    "screen and (max-width: 480px)": {
       marginTop: '20px'
     }
   }
@@ -41,7 +41,7 @@ export const categoryChip = style({
 export const title = style({
   marginTop: '40px',
   "@media": {
-    "screen and (min-width: 480px)": {
+    "screen and (max-width: 480px)": {
       marginTop: '20px',
     }
   }
@@ -51,7 +51,7 @@ export const date = style({
   margin: '16px 0 40px',
   color: "#343a40",
   "@media": {
-    "screen and (min-width: 480px)": {
+    "screen and (max-width: 480px)": {
       margin: '16px 0 20px',
     }
   }

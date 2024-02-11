@@ -1,15 +1,13 @@
 import { style } from "@vanilla-extract/css";
 
 export const headerContainer = style({
-  height: "52px",
+  height: "64px",
   overflowY: "hidden",
 
   margin: "0 auto",
 
   display: "flex",
   alignItems: "center",
-
-  borderBottom: "0.5px solid #aaa",
 });
 
 export const headerLayout = style({

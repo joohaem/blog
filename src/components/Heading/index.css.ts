@@ -3,7 +3,7 @@ import { style } from "@vanilla-extract/css";
 export const largeDisplayHeading = style({
   fontSize: "48px",
   lineHeight: "130%",
-  letterSpacing: "0.08em",
+  letterSpacing: "0.1em",
 });
 export const largeHeadlineHeading = style({
   fontSize: "33px",

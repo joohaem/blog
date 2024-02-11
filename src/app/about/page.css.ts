@@ -1,28 +1,23 @@
 import { style } from "@vanilla-extract/css";
 
 export const contentsContainer = style({
+  width: '100%',
   display: 'flex',
   gap: '30px',
   flexWrap: 'wrap',
-
-  "@media": {
-    "screen and (max-width: 1110px)": {
-      padding: "0 18px"
-    }
-  }
 })
 
 export const content = style({
   flex: 1,
-  minWidth: '350px',
-  maxWidth: '378px',
+  minWidth: '340px',
+  maxWidth: '358px', // max 1/3 size
 
   display: 'flex',
   flexDirection: 'column',
   gap: '12px',
 
   "@media": {
-    "screen and (max-width: 1110px)": {
+    "screen and (max-width: 1194px)": {
       maxWidth: 'none',
     }
   },

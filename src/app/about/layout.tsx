@@ -2,7 +2,7 @@ import Container from "@/components/Container";
 import Header from "@/components/Header"
 import PageTitle from "@/components/PageTitle"
 import { PropsWithChildren } from "react"
-import { contentsContainer, tabsContainer } from "./layout.css";
+import { tabsContainer } from "./layout.css";
 import RouteTab, { RouteTab as TRouteTab } from "@/components/RouteTab";
 
 const TABS: TRouteTab[] = [
@@ -59,7 +59,7 @@ const Layout = ({children}: PropsWithChildren) => {
           }
         </div>
       </Container>
-      <Container className={contentsContainer}>    
+      <Container>    
         {children}
       </Container>
     </>

@@ -2,11 +2,11 @@ import { style } from "@vanilla-extract/css";
 
 
 export const tabsContainer = style({
+  width: "100%",
   display: "flex",
-  gap: "32px",
-  margin: "50px 0 40px"
-})
+  rowGap: "16px",
+  columnGap: "32px",
+  flexWrap: "wrap",
 
-export const contentsContainer = style({
-  padding: '0px'
+  margin: "50px 0 40px"
 })

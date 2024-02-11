@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
+
 import Container from "@/components/Container";
-import EmphasizedText from "@/components/EmphasizedText";
 import RouteTab, { RouteTab as TRouteTab } from "@/components/RouteTab";
 
 import {
@@ -33,7 +34,7 @@ export default function Header() {
       <header className={headerContainer}>
         <div className={headerLayout}>
           <Link href="/">
-            <EmphasizedText size="s">SNUPI</EmphasizedText>
+            <Image src="/logo.svg" alt="logo" width={68} height={30} />
           </Link>
           <ul className={tabsWrapper}>
             {TABS.map(({ id, text, href, exact }) => (

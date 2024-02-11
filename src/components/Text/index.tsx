@@ -35,7 +35,7 @@ export default function Text({
   children
 }: PropsWithChildren<TextProps>) {
   return (
-    <p 
+    <div 
       className={
         clsx(
           sizeCss[size],
@@ -45,6 +45,6 @@ export default function Text({
       }
     >
       {children}
-    </p>
+    </div>
   )
 }
