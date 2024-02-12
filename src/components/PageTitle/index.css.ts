@@ -1,8 +1,14 @@
 import { style } from "@vanilla-extract/css";
 
 export const pageTitleRoot = style({
-  height: "262px",
-  backgroundColor: "#000",
+  height: "380px",
+  backgroundColor: "#111",
+
+  "@media": {
+    "screen and (max-width: 480px)": {
+      height: '262px',
+    },
+  },
 });
 
 export const container = style({
@@ -11,9 +17,10 @@ export const container = style({
 
 export const title = style({
   position: "absolute",
-  top: "155px",
+  bottom: "62px",
   left: "0",
   color: "#fff",
+
   "@media": {
     "screen and (max-width: 480px)": {
       left: '18px',
