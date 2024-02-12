@@ -36,13 +36,17 @@ interface ArticlesProps {
   params?: { category?: string };
 }
 
-export default async function Articles({
-  params,
-}: ArticlesProps) {
+export default async function Articles({ params }: ArticlesProps) {
   const currentCategory =
     params?.category && decode(decodeURIComponent(params.category));
 
-  const articles = (await getArticles()).filter(({ isPublished }) => isPublished);
+  const articles = (await getArticles())
+    .filter(({ isPublished }) => isPublished)
+    .sort((a, b) =>
+      b.publishedAt && a.publishedAt
+        ? b.publishedAt.getTime() - a.publishedAt.getTime()
+        : 0
+    );
   // const categories = articles
   //   .map((article) => article.category)
   //   .filter((category): category is string => !!category);
@@ -75,15 +79,10 @@ export default async function Articles({
               <div>
                 <Text className={articleInfo}>
                   {article.category} |{" "}
-                  {
-                    article.publishedAt 
-                    && format(article.publishedAt, "yyyy.MM.dd")
-                  }
+                  {article.publishedAt &&
+                    format(article.publishedAt, "yyyy.MM.dd")}
                 </Text>
-                <Heading
-                  as="h2"
-                  size="title-l"
-                >
+                <Heading as="h2" size="title-l">
                   {article.title}
                 </Heading>
                 <Text className={articleDescription}>
