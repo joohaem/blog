@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
+import { GOOGLE_ANALYTICS, GOOGLE_VERIFICATION_CODE } from "@/consts/env";
+
 import "./globals.css";
 import { BASE_URL } from "./const";
 import { bodyContainer } from "./layout.css";
-import { GOOGLE_VERIFICATION_CODE } from "@/consts/env";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "SNUPI Blog",
@@ -57,6 +59,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${pretendardFont.className}`}>
+      {
+        GOOGLE_ANALYTICS 
+        ? (
+          <GoogleAnalytics gaId={GOOGLE_ANALYTICS} /> 
+        ) 
+        : null
+      }
       <body className={bodyContainer}>{children}</body>
     </html>
   );
