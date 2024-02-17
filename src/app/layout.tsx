@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import {Source_Serif_4} from "next/font/google";
+import { Source_Serif_4 } from "next/font/google";
 import clsx from "clsx";
 
 import GoogleAnalytics from "@/components/GoogleAnalytics";
@@ -11,6 +11,7 @@ import { BASE_URL } from "./const";
 import { bodyContainer } from "./layout.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL ?? ""),
   title: "SNUPI Blog",
   description: "",
   openGraph: {
@@ -19,9 +20,22 @@ export const metadata: Metadata = {
     url: BASE_URL ?? undefined,
     type: "website",
   },
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: true,
+      noimageindex: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   verification: {
-    google: GOOGLE_VERIFICATION_CODE ?? undefined
-  }
+    google: GOOGLE_VERIFICATION_CODE ?? undefined,
+  },
 };
 
 const pretendardFont = localFont({
@@ -55,12 +69,11 @@ const pretendardFont = localFont({
 });
 
 const sourceSerif4Font = Source_Serif_4({
-  weight: ['200', '300', '400'],
-  subsets: ['latin', 'latin-ext'],
-  display: 'swap',
-  variable: '--font-source-serif-4',
+  weight: ["200", "300", "400"],
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-source-serif-4",
 });
-
 
 export default function RootLayout({
   children,
@@ -68,22 +81,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html 
-      lang="en" 
-      className={
-        clsx(
-          pretendardFont.className,
-          sourceSerif4Font.variable
-        )
-      }
+    <html
+      lang="en"
+      className={clsx(pretendardFont.className, sourceSerif4Font.variable)}
     >
-      {
-        GOOGLE_ANALYTICS 
-        ? (
-          <GoogleAnalytics gaId={GOOGLE_ANALYTICS} /> 
-        ) 
-        : null
-      }
+      {GOOGLE_ANALYTICS ? <GoogleAnalytics gaId={GOOGLE_ANALYTICS} /> : null}
       <body className={bodyContainer}>{children}</body>
     </html>
   );
