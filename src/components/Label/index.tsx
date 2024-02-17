@@ -2,27 +2,28 @@ import { PropsWithChildren } from "react";
 import clsx from "clsx";
 
 import {
-  extraLargeLabel,
   largeLabel,
+  largeTabLabel,
   mediumLabel,
-  smallLabel,
+  serifFont,
 } from "./index.css";
 
 
 interface LabelProps {
-  size?: "xl" | "l" | "m" | "s";
+  size?: "tab-l" | "l" | "m";
+  serif?: boolean;
   className?: string;
 };
 
 const sizeCss = {
-  "xl": extraLargeLabel,
+  "tab-l": largeTabLabel,
   "l": largeLabel,
   "m": mediumLabel,
-  "s": smallLabel
 } as const
 
 export default function Label({
   size = "m",
+  serif = false,
   className,
   children,
 }: PropsWithChildren<LabelProps>) {
@@ -31,6 +32,7 @@ export default function Label({
       className={
         clsx(
           sizeCss[size],
+          serif && serifFont,
           className
         )
       }

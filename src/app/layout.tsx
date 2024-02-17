@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import {Source_Serif_4} from "next/font/google";
+import clsx from "clsx";
 
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { GOOGLE_ANALYTICS, GOOGLE_VERIFICATION_CODE } from "@/consts/env";
 
 import "./globals.css";
 import { BASE_URL } from "./const";
 import { bodyContainer } from "./layout.css";
-import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "SNUPI Blog",
@@ -52,13 +54,29 @@ const pretendardFont = localFont({
   display: "swap",
 });
 
+const sourceSerif4Font = Source_Serif_4({
+  weight: ['200', '300', '400'],
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-source-serif-4',
+});
+
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${pretendardFont.className}`}>
+    <html 
+      lang="en" 
+      className={
+        clsx(
+          pretendardFont.className,
+          sourceSerif4Font.variable
+        )
+      }
+    >
       {
         GOOGLE_ANALYTICS 
         ? (

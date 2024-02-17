@@ -2,7 +2,6 @@ import { PropsWithChildren } from "react";
 import clsx from "clsx";
 
 import {
-  largeText,
   regularWeight,
   mediumText,
   mediumWeight,
@@ -12,13 +11,12 @@ import {
 
 
 export interface TextProps {
-  size?: "l" | "m" | "s";
+  size?: "m" | "s";
   weight?: 'light' | 'regular' | 'medium';
   className?: string;
 };
 
 const sizeCss = {
-  "l": largeText,
   "m": mediumText,
   "s": smallText
 } as const

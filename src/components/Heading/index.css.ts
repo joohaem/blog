@@ -1,26 +1,25 @@
 import { style } from "@vanilla-extract/css";
 
 export const largeDisplayHeading = style({
-  fontSize: "48px",
-  lineHeight: "130%",
-  letterSpacing: "0.1em",
+  fontSize: "52px",
+  lineHeight: "150%",
+  letterSpacing: "0.15em",
 });
-export const largeHeadlineHeading = style({
-  fontSize: "33px",
-  lineHeight: "130%",
-});
-export const largeTitleHeading = style({
-  fontSize: "23px",
-  lineHeight: "130%",
-  letterSpacing: "-0.001em",
+export const mediumDisplayHeading = style({
+  fontSize: "40px",
+  lineHeight: "150%",
 });
 export const mediumTitleHeading = style({
-  fontSize: "18px",
-  lineHeight: "130%",
+  fontSize: "20px",
+  lineHeight: "150%",
 });
 export const smallTitleHeading = style({
+  fontSize: "18px",
+  lineHeight: "150%",
+});
+export const extraSmallTitleHeading = style({
   fontSize: "16px",
-  lineHeight: "130%",
+  lineHeight: "150%",
 });
 
 export const extraLightWeight = style({
@@ -34,4 +33,8 @@ export const mediumWeight = style({
 })
 export const semiBoldWeight = style({
   fontWeight: '600'
+})
+
+export const serifFont = style({
+  fontFamily: 'var(--font-source-serif-4)'
 })
