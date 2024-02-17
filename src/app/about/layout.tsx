@@ -8,31 +8,31 @@ import RouteTab, { RouteTab as TRouteTab } from "@/components/RouteTab";
 const TABS: TRouteTab[] = [
   {
     id: "all",
-    text: "ALL",
+    text: "All",
     href: "/about",
     exact: true,
   },
   {
     id: "life",
-    text: "LIFE",
+    text: "Life",
     href: "/about/life",
     exact: true,
   },
   {
     id: "engineering",
-    text: "ENGINEERING",
+    text: "Engineering",
     href: "/about/engineering",
     exact: true,
   },
   {
     id: "blog",
-    text: "BLOG",
+    text: "Blog",
     href: "/about/blog",
     exact: true,
   },
   {
     id: "contact",
-    text: "CONTACT",
+    text: "Contact",
     href: "/about/contact",
     exact: true,
   },
