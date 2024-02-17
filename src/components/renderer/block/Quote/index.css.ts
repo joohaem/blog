@@ -7,3 +7,7 @@ export const container = style({
 export const quoteIconWrapper = style({
   marginBottom: '4px'
 })
+
+export const text = style({
+  fontSize: '16px'
+})

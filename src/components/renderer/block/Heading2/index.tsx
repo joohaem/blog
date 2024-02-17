@@ -15,7 +15,7 @@ const Heading2: FC<Heading2Props> = ({ block }) => {
     <RichTextRenderer
       richText={block.heading_2.rich_text}
       render={(children) => (
-        <Heading as='h3' size='title-l' weight='semiBold' className={text}>{children}</Heading >
+        <Heading as='h3' weight='semiBold' className={text}>{children}</Heading >
       )}
     />
   );

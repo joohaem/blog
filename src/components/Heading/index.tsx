@@ -12,12 +12,13 @@ import {
   semiBoldWeight,
   serifFont,
   smallTitleHeading,
+  regularWeight,
 } from "./index.css";
 
 
 interface HeadingProps extends Omit<HeadingTagProps, 'className'> {
   size?: "display-l" | "display-m" | "title-m" | "title-s" | "title-xs";
-  weight?: 'extraLight' | 'light' | 'medium' | 'semiBold';
+  weight?: 'extraLight' | 'light' | "regular" | 'medium' | 'semiBold';
   serif?: boolean;
   className?: string;
 };
@@ -32,13 +33,14 @@ const sizeCss = {
 const weightCss = {
   "extraLight": extraLightWeight,
   "light": lightWeight,
+  "regular": regularWeight,
   "medium": mediumWeight,
   "semiBold": semiBoldWeight
 } as const
 
 export default function Heading({
   size = "title-m",
-  weight = 'medium',
+  weight = 'regular',
   serif = false,
   className,
   ...props

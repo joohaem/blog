@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { PickNotionBlock } from '@/core/notion/types';
 
 import RichTextRenderer from '../../RichTextRenderer';
-import { container, quoteIconWrapper } from './index.css';
+import { container, quoteIconWrapper, text } from './index.css';
 import Text from '@/components/Text';
 
 interface QuoteProps {
@@ -17,7 +17,7 @@ const Quote: FC<QuoteProps> = ({ block }) => {
       render={(children) => (
         <div className={container}>
           <div className={quoteIconWrapper}>{quoteIcon}</div>
-          <Text size='l'>
+          <Text size="m" className={text}>
             {children}
           </Text>
         </div>

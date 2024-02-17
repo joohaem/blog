@@ -28,6 +28,9 @@ export const extraLightWeight = style({
 export const lightWeight = style({
   fontWeight: '300'
 })
+export const regularWeight = style({
+  fontWeight: '400'
+})
 export const mediumWeight = style({
   fontWeight: '500'
 })

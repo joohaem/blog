@@ -1,6 +1,7 @@
 import ArticlePage from '@/components/ArticlePage';
 import Comments from '@/components/Comments';
 import Container from '@/components/Container';
+import Header from '@/components/Header';
 import { getArticleById, getArticles } from '@/core/blog';
 import { Metadata, ResolvingMetadata } from 'next';
 
@@ -37,10 +38,11 @@ export async function generateMetadata({ params }: ArticleProps, _parent: Resolv
 
 async function Article({ params }: ArticleProps) {
   return (
-    <Container>
+    <>
+      <Header />
       <ArticlePage params={params} />
       <Comments />
-    </Container>
+    </>
   );
 }
 

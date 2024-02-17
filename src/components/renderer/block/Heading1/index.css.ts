@@ -1,5 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
 export const text = style({
-  marginTop: '24px',
+  fontSize: '24px',
+  marginTop: '16px',
 })

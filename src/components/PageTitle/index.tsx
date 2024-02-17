@@ -13,7 +13,8 @@ export default function PageTitle({ title: propTitle }: PageTitleProps) {
         <Heading 
           as="h1"
           size='display-l'
-          weight="extraLight"
+          weight="light"
+          serif
           className={title}
         >
           {propTitle}

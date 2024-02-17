@@ -9,20 +9,13 @@ export const chip = style({
 });
 export const activeChip = style([
   chip,
-  {
-    border: "1px solid #eeeeee",
-    backgroundColor: "#eeeeee",
-  },
 ]);
 export const inactiveChip = style([
   chip,
   {
-    border: "1px solid #000",
-    backgroundColor: "#000",
-    color: "#fff",
+    color: "rgba(0, 0, 0, 0.5)",
     ":hover": {
-      border: "1px solid #eeeeee",
-      backgroundColor: "#eeeeee",
+      color: "#010101",
     },
   },
 ]);

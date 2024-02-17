@@ -9,7 +9,7 @@ import {
 } from "./index.css";
 
 
-interface LabelProps {
+export interface LabelProps {
   size?: "tab-l" | "l" | "m";
   serif?: boolean;
   className?: string;

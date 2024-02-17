@@ -9,6 +9,7 @@ export const number = style({
 })
 
 export const bodyContainer = style({
+  flex: '1',
   display: 'flex',
   flexDirection: 'column'
 })

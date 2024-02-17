@@ -7,24 +7,29 @@ export const categoryChipsWrapper = style({
   display: "flex",
   gap: "8px",
 
-  padding: "40px 0 0",
+  marginTop: "40px",
 });
 
 export const articleListContainer = style({
   display: "flex",
   gap: '30px',
   justifyContent: "space-between",
-  padding: "40px 0 0",
+
+  marginTop: "30px",
 });
 
 export const articleInfo = style({
-  color: '#6c757d',
+  color: 'rgba(0, 0, 0, 0.5)',
 });
 
-export const articleDescription = style({
-  marginTop: '16px',
+export const articleTitle = style({
+  marginTop: '8px'
+})
 
-  height: '72px',
+export const articleDescription = style({
+  marginTop: '8px',
+
+  height: '56px',
   display: '-webkit-box',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
@@ -34,9 +39,9 @@ export const articleDescription = style({
 
 export const thumbnailWrapper = style({
   position: 'relative',
-  width: "140px",
-  minWidth: '140px',
-  height: "140px",
+  width: "276px",
+  minWidth: '276px',
+  height: "123px",
 
   display: "flex",
   justifyContent: "center",

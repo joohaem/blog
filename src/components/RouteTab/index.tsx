@@ -5,8 +5,8 @@ import {
   inactiveTab,
   tab,
 } from "./index.css"
-import Text, { TextProps } from "@/components/Text";
 import { usePathname } from "next/navigation";
+import Label, { LabelProps } from "@/components/Label";
 
 export type RouteTab = {
   id: string;
@@ -14,7 +14,7 @@ export type RouteTab = {
   href: string;
   exact?: boolean;
 }
-interface RouteTabProps extends RouteTab, TextProps {}
+interface RouteTabProps extends RouteTab, LabelProps {}
 
 const RouteTab = ({
   text,
@@ -32,7 +32,7 @@ const RouteTab = ({
       }
     >
       <Link href={href}>
-        <Text size="m" weight='medium' {...props}>{text}</Text>
+        <Label size="tab-l" {...props}>{text}</Label>
       </Link>
     </li>
   )

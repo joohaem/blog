@@ -2,6 +2,7 @@ import Image from "next/image";
 import { content, contentImage, contentImageWrapper, contentsContainer, descriptionWrapper } from "./page.css";
 import Text from "@/components/Text";
 import Link from "next/link";
+import Heading from "@/components/Heading";
 
 const CONTENTS = [
   {
@@ -52,9 +53,9 @@ export default function About() {
                   className={contentImage}
                 />
               </div>
-              <Text size="l">
+              <Heading size="title-s">
                 {title}
-              </Text>
+              </Heading>
               <Text size="s" className={descriptionWrapper}>
                 {description}
               </Text>

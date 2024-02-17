@@ -8,5 +8,5 @@ export const tabsContainer = style({
   columnGap: "32px",
   flexWrap: "wrap",
 
-  margin: "50px 0 40px"
+  margin: "40px 0"
 })

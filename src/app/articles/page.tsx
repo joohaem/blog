@@ -14,11 +14,13 @@ import {
   articleDescription,
   articleInfo,
   articleListContainer,
+  articleTitle,
   categoryChipsWrapper,
   thumbnailImage,
   thumbnailWrapper,
 } from "./page.css";
 import Text from "@/components/Text";
+import Label from "@/components/Label";
 
 export async function generateStaticParams() {
   const articles = await getArticles();
@@ -61,7 +63,7 @@ export default async function Articles({ params }: ArticlesProps) {
       <Container>
         <div className={categoryChipsWrapper}>
           <Link href="/articles">
-            <Chip active={!currentCategory}>전체</Chip>
+            <Chip active={!currentCategory}>All</Chip>
           </Link>
           {/* {categories.map((category) => (
             <Link key={category} href={`/category/${encode(category)}`}>
@@ -77,15 +79,15 @@ export default async function Articles({ params }: ArticlesProps) {
               className={articleListContainer}
             >
               <div>
-                <Text className={articleInfo}>
+                <Label size="m" className={articleInfo}>
                   {article.category} |{" "}
                   {article.publishedAt &&
                     format(article.publishedAt, "yyyy.MM.dd")}
-                </Text>
-                <Heading as="h2" size="title-l">
+                </Label>
+                <Heading as="h2" size="title-m" className={articleTitle}>
                   {article.title}
                 </Heading>
-                <Text className={articleDescription}>
+                <Text size="s" className={articleDescription}>
                   {article.description}
                 </Text>
               </div>

@@ -14,7 +14,7 @@ export const inactiveTab = style([
     color: "rgba(0, 0, 0, 0.5)",
 
     ":hover": {
-      color: "#000",
+      color: "#010101",
     },
   },
 ]);

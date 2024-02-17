@@ -17,7 +17,7 @@ export const container = style({
 
 export const title = style({
   position: "absolute",
-  bottom: "62px",
+  bottom: "48px",
   left: "0",
   color: "#fff",
 

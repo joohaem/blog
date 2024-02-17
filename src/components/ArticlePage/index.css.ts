@@ -1,60 +1,43 @@
 import { style } from "@vanilla-extract/css";
 
-export const backLink = style({
-  display: "flex",
-  gap: "8px",
-  padding: "24px 8px",
-});
-
-export const label = style({
-  color: "gray"
-});
-
 export const thumbnailImageWrapper = style({
   position: "relative",
   width: "100%",
-  height: "400px",
+  height: "383px",
 
   overflow: "clip",
+
+  backgroundColor: "rgba(1, 1, 1, 0.7)"
 });
 
 export const thumbnailImage = style({
-  objectFit: 'contain'
+  objectFit: 'cover'
 })
 
-export const categories = style({
-  display: "flex",
-  marginTop: "32px",
-  "@media": {
-    "screen and (max-width: 480px)": {
-      marginTop: '20px'
-    }
-  }
-});
-
-export const categoryChip = style({
-  borderRadius: "13px",
-  padding: "6px 12px",
-  backgroundColor: "#FFC8DC"
-});
-
-export const title = style({
-  marginTop: '40px',
-  "@media": {
-    "screen and (max-width: 480px)": {
-      marginTop: '20px',
-    }
-  }
+export const dimmedFilter = style({
+  position: "absolute",
+  top: "0",
+  left: "0",
+  right: "0",
+  bottom: "0",
+  
+  backgroundColor: "rgba(1, 1, 1, 0.7)"
 })
 
-export const date = style({
-  margin: '16px 0 40px',
-  color: "#343a40",
-  "@media": {
-    "screen and (max-width: 480px)": {
-      margin: '16px 0 20px',
-    }
-  }
+export const titleContainer = style({
+  marginTop: "238px"
 })
 
-export const bodyContainer = style({})
+export const articleTitle = style({
+  marginTop: '10px',
+  color: "#ffffff"
+
+})
+
+export const articleInfo = style({
+  color: "rgba(255, 255, 255, 0.7)"
+})
+
+export const bodyContainer = style({
+  paddingTop: "30px"
+})

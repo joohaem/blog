@@ -24,7 +24,7 @@ const BulletListItem = async ({ block }: BulletListItemProps) => {
       richText={block.bulleted_list_item.rich_text}
       render={(text) => (
         <div className={container}>
-          <div className={bullet}>•</div>
+          <Text className={bullet}>•</Text>
           <div className={bodyContainer}>
             <Text>{text}</Text>
             {children}

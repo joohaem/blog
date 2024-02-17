@@ -14,7 +14,7 @@ export const content = style({
 
   display: 'flex',
   flexDirection: 'column',
-  gap: '12px',
+  gap: '10px',
 
   "@media": {
     "screen and (max-width: 1194px)": {

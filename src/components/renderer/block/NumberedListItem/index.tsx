@@ -25,7 +25,7 @@ const NumberedListItem = async ({ block, num }: NumberedListItemProps) => {
       richText={block.numbered_list_item.rich_text}
       render={(text) => (
         <div className={container}>
-          <div className={number}>{num}.</div>
+          <Text className={number}>{num}.</Text>
           <div className={bodyContainer}>
             <Text>{text}</Text>
             {children}
