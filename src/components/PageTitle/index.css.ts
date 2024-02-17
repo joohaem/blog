@@ -1,32 +1,33 @@
 import { style } from "@vanilla-extract/css";
 
 export const pageTitleRoot = style({
-  height: "380px",
+  height: "262px",
   backgroundColor: "#111",
 
   "@media": {
-    "screen and (max-width: 480px)": {
-      height: '262px',
+    "screen and (min-width: 768px)": {
+      height: "380px",
     },
   },
 });
 
 export const container = style({
   position: "relative",
+
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+
+  "@media": {
+    "screen and (min-width: 768px)": {
+      justifyContent: "normal",
+      alignItems: "flex-end",
+
+      paddingBottom: "48px",
+    },
+  },
 });
 
 export const title = style({
-  position: "absolute",
-  bottom: "48px",
-  left: "0",
   color: "#fff",
-
-  "@media": {
-    "screen and (max-width: 480px)": {
-      left: '18px',
-    },
-    "screen and (min-width: 480px) and (max-width: 1194px)": {
-      left: '30px',
-    }
-  },
 });

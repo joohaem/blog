@@ -1,19 +1,34 @@
 import { style } from "@vanilla-extract/css";
 
 export const largeTabLabel = style({
-  fontSize: "16px",
+  fontSize: "15px",
   lineHeight: "150%",
-  letterSpacing: "0.05em"
+  letterSpacing: "0.05em",
+  "@media": {
+    "screen and (min-width: 768px)": {
+      fontSize: "16px",
+    },
+  },
 });
 export const largeLabel = style({
-  fontSize: "16px",
+  fontSize: "12px",
   lineHeight: "150%",
+  "@media": {
+    "screen and (min-width: 768px)": {
+      fontSize: "16px",
+    },
+  },
 });
 export const mediumLabel = style({
-  fontSize: "14px",
+  fontSize: "11px",
   lineHeight: "150%",
+  "@media": {
+    "screen and (min-width: 768px)": {
+      fontSize: "14px",
+    },
+  },
 });
 
 export const serifFont = style({
-  fontSize: "var(--font-source-serif-4)"
-})
+  fontFamily: "var(--font-source-serif-4)",
+});
