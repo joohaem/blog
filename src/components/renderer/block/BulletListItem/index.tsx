@@ -1,13 +1,13 @@
-import { getBlocks } from '@/core/notion/request';
-import { PickNotionBlock } from '@/core/notion/types';
+import { getBlocks } from "@/core/notion/request";
+import { PickNotionBlock } from "@/core/notion/types";
 
-import RichTextRenderer from '../../RichTextRenderer';
-import { bodyContainer, bullet, container } from './index.css';
-import { BlockRenderer } from '../../BlockRenderer';
-import Text from '@/components/Text';
+import RichTextRenderer from "../../RichTextRenderer";
+import { bodyContainer, bullet, container } from "./index.css";
+import { BlockRenderer } from "../../BlockRenderer";
+import Text from "@/components/Text";
 
 interface BulletListItemProps {
-  block: PickNotionBlock<'bulleted_list_item'>;
+  block: PickNotionBlock<"bulleted_list_item">;
 }
 
 const BulletListItem = async ({ block }: BulletListItemProps) => {
