@@ -8,17 +8,17 @@ export const contentsContainer = style({
 });
 
 export const content = style({
-  flex: 1,
-  minWidth: "340px",
-  maxWidth: "none",
-
   display: "flex",
   flexDirection: "column",
   gap: "10px",
 
+  width: "100%",
   "@media": {
+    "screen and (min-width: 768px) and (max-width: 1194px)": {
+      width: "calc((100% - 30px) / 2)"
+    },
     "screen and (min-width: 1194px)": {
-      maxWidth: "358px", // max 1/3 size
+      width: "calc((100% - 60px) / 3)"
     },
   },
 

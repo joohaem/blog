@@ -31,6 +31,7 @@ export const text = style({
   flex: "1",
 
   lineHeight: "2 !important",
+  textAlign: "justify"
 });
 
 export const image = style({
