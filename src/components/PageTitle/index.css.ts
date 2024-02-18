@@ -23,7 +23,7 @@ export const container = style({
       justifyContent: "normal",
       alignItems: "flex-end",
 
-      paddingBottom: "48px !important",
+      paddingBottom: "48px",
     },
   },
 });
