@@ -39,7 +39,7 @@ export const titleContainer = style({
 
       textAlign: "start",
 
-      paddingBottom: "48px",
+      paddingBottom: "48px !important",
     },
   },
 });
