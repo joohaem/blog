@@ -8,11 +8,20 @@ export async function getArticles() {
   const objects = await getDatabaseContents(SOURCE_DATABASE);
 
   const articles = objects.map(({ properties, id }) => {
-    const { title, thumbnail, publishedAt, category, description, isPublished } = extractArticleProperties(properties);
+    const { 
+      title, 
+      urlPath, 
+      thumbnail, 
+      publishedAt, 
+      category, 
+      description, 
+      isPublished 
+    } = extractArticleProperties(properties);
 
     return {
       id,
       title,
+      urlPath,
       thumbnail,
       publishedAt,
       category,
@@ -24,13 +33,30 @@ export async function getArticles() {
   return articles;
 }
 
+export async function getArticleByUrlPath(urlPath: string) {
+  const articles = await getArticles();
+  const article = articles.find((article) => article.urlPath === urlPath);
+
+  if (!article) throw new Error('Invalid URL article Path')
+
+  return getArticleById(article.id);
+}
+
 export async function getArticleById(id: string) {
   const [meta, blocks] = await Promise.all([getPage(id), getBlocks(id)]);
 
-  const { title, publishedAt, category, thumbnail, description } = extractArticleProperties(meta.properties);
+  const { 
+    title,
+    urlPath,
+    publishedAt, 
+    category, 
+    thumbnail, 
+    description 
+  } = extractArticleProperties(meta.properties);
 
   return {
     title,
+    urlPath,
     publishedAt,
     category,
     thumbnail,
@@ -43,6 +69,7 @@ function extractArticleProperties(properties: PageObjectResponse['properties']) 
   const resolver = propertyResolver(properties);
 
   const title = resolver.title('title');
+  const urlPath = resolver.richText('urlPath');
   const publishedAt = resolver.date('publishedAt');
   const category = resolver.select('category');
   const description = resolver.richText('description');
@@ -52,6 +79,7 @@ function extractArticleProperties(properties: PageObjectResponse['properties']) 
 
   return {
     title,
+    urlPath,
     publishedAt,
     description,
     category,

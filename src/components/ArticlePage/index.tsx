@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { format } from "date-fns";
 
-import { getArticleById } from "@/core/blog";
+import { getArticleByUrlPath } from "@/core/blog";
 import Label from "@/components/Label";
 import Heading from "@/components/Heading";
 import Container from "@/components/Container";
@@ -19,13 +19,13 @@ import {
 
 interface ArticlePageProps {
   params: {
-    id: string;
+    path: string;
   };
 }
 
 async function ArticlePage({ params }: ArticlePageProps) {
-  const id = params.id;
-  const article = await getArticleById(id);
+  const urlPath = params.path;
+  const article = await getArticleByUrlPath(urlPath);
 
   return (
     <>
