@@ -5,7 +5,7 @@ import { getArticles } from "@/core/blog";
 
 const Sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const articles = (await getArticles()).map((article) => ({
-    url: `${BASE_URL}/articles/${article.id}`,
+    url: `${BASE_URL}/articles/${article.urlPath}`,
     lastModified: new Date(),
   }));
 

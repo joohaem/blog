@@ -75,7 +75,7 @@ export default async function Articles({ params }: ArticlesProps) {
           {articles.map((article) => (
             <Link
               key={article.id}
-              href={`/articles/${article.id}`}
+              href={`/articles/${article.urlPath}`}
               className={articleListContainer}
             >
               <div>
