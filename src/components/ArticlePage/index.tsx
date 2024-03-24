@@ -36,6 +36,7 @@ async function ArticlePage({ params }: ArticlePageProps) {
             alt="Thumbnail Image"
             fill
             className={thumbnailImage}
+            priority
           />
           <div className={dimmedFilter}>
             <Container className={titleContainer}>
