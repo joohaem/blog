@@ -1,8 +1,8 @@
 import { style } from "@vanilla-extract/css";
 
 import {
+  DESKTOP_MEDIA_QUERY,
   MORE_BIG_DESKTOP_MEDIA_QUERY,
-  MORE_DESKTOP_LESS_BIG_DESKTOP_MEDIA_QUERY,
 } from "@/consts/mediaQuery";
 
 export const contentsContainer = style({
@@ -19,7 +19,7 @@ export const content = style({
 
   width: "100%",
   "@media": {
-    [MORE_DESKTOP_LESS_BIG_DESKTOP_MEDIA_QUERY]: {
+    [DESKTOP_MEDIA_QUERY]: {
       width: "calc((100% - 30px) / 2)",
     },
     [MORE_BIG_DESKTOP_MEDIA_QUERY]: {

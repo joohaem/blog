@@ -2,7 +2,7 @@ import { style } from "@vanilla-extract/css";
 
 import {
   MORE_BIG_DESKTOP_MEDIA_QUERY,
-  MORE_TABLET_LEFF_DESKTOP_MEDIA_QUERY,
+  TABLET_N_DESKTOP_MEDIA_QUERY,
 } from "@/consts/mediaQuery";
 
 export const containerRoot = style({
@@ -13,7 +13,7 @@ export const containerRoot = style({
   paddingLeft: "18px",
   paddingRight: "18px",
   "@media": {
-    [MORE_TABLET_LEFF_DESKTOP_MEDIA_QUERY]: {
+    [TABLET_N_DESKTOP_MEDIA_QUERY]: {
       paddingLeft: "30px",
       paddingRight: "30px",
     },
