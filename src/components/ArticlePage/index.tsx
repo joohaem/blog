@@ -6,7 +6,6 @@ import Heading from "@/components/Heading";
 import Label from "@/components/Label";
 import { BlockRenderer } from "@/components/renderer/BlockRenderer";
 import { getArticleByUrlPath } from "@/core/blog";
-import { getArticleById } from "@/core/blog";
 
 import {
   articleInfo,

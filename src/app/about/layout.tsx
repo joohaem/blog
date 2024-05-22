@@ -1,10 +1,10 @@
+import { Metadata } from "next";
 import { PropsWithChildren } from "react";
 
 import Container from "@/components/Container";
 import Header from "@/components/Header";
 import PageTitle from "@/components/PageTitle";
 import RouteTab, { RouteTab as TRouteTab } from "@/components/RouteTab";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "SNUPI Blog",
@@ -33,7 +33,6 @@ export const metadata: Metadata = {
     },
   },
 };
-
 
 import { tabsContainer } from "./layout.css";
 
