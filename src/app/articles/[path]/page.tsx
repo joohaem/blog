@@ -3,11 +3,11 @@ import { Metadata, ResolvingMetadata } from "next";
 import ArticlePage from "@/components/ArticlePage";
 import Comments from "@/components/Comments";
 import Header from "@/components/Header";
-import { getArticleById, getArticles } from "@/core/blog";
+import { getArticleByUrlPath, getArticles } from "@/core/blog";
 
 interface ArticleProps {
   params: {
-    id: string;
+    path: string;
   };
 }
 
@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   const articles = await getArticles();
 
   return articles.map((article) => ({
-    id: article.id,
+    path: article.urlPath,
   }));
 }
 
@@ -23,8 +23,8 @@ export async function generateMetadata(
   { params }: ArticleProps,
   _parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const id = params.id;
-  const article = await getArticleById(id);
+  const id = params.path;
+  const article = await getArticleByUrlPath(id);
 
   return {
     title: article.title,

@@ -6,7 +6,7 @@ export function propertyResolver(properties: PageObjectResponse['properties']) {
     type: T,
   ): PageObjectResponse['properties'][string] & { type: T } {
     const property = properties[name];
-
+    
     if (property.type !== type) {
       throw new Error(`${name} 필드는 ${type} 타입의 속성이 아닙니다.`);
     }

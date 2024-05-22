@@ -5,6 +5,7 @@ import Container from "@/components/Container";
 import Heading from "@/components/Heading";
 import Label from "@/components/Label";
 import { BlockRenderer } from "@/components/renderer/BlockRenderer";
+import { getArticleByUrlPath } from "@/core/blog";
 import { getArticleById } from "@/core/blog";
 
 import {
@@ -19,13 +20,13 @@ import {
 
 interface ArticlePageProps {
   params: {
-    id: string;
+    path: string;
   };
 }
 
 async function ArticlePage({ params }: ArticlePageProps) {
-  const id = params.id;
-  const article = await getArticleById(id);
+  const urlPath = params.path;
+  const article = await getArticleByUrlPath(urlPath);
 
   return (
     <>
@@ -36,6 +37,7 @@ async function ArticlePage({ params }: ArticlePageProps) {
             alt="Thumbnail Image"
             fill
             className={thumbnailImage}
+            priority
           />
           <div className={dimmedFilter}>
             <Container className={titleContainer}>

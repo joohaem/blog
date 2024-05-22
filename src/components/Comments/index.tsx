@@ -12,7 +12,6 @@ const Comments = () => {
 
     const script = document.createElement("script");
     script.src = "https://utteranc.es/client.js";
-    script.async = true;
     script.setAttribute("repo", "joohaem/blog");
     script.setAttribute("issue-term", "title");
     script.setAttribute("theme", "github-light");

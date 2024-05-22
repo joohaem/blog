@@ -1,7 +1,8 @@
 import { style } from "@vanilla-extract/css";
 
 export const container = style({
-  padding: "12px 0 24px",
+  paddingTop: "12px",
+  paddingBottom: "24px",
 });
 
 export const quoteIconWrapper = style({
