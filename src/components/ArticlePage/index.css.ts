@@ -1,5 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
+import { MORE_DESKTOP_MEDIA_QUERY } from "@/consts/mediaQuery";
+
 export const thumbnailImageWrapper = style({
   position: "relative",
   width: "100%",
@@ -33,7 +35,7 @@ export const titleContainer = style({
   textAlign: "center",
 
   "@media": {
-    "screen and (min-width: 768px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       justifyContent: "flex-end",
       alignItems: "normal",
 

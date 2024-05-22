@@ -1,8 +1,10 @@
 import { style } from "@vanilla-extract/css";
 
+import { MORE_DESKTOP_MEDIA_QUERY } from "@/consts/mediaQuery";
+
 export const containerRoot = style({
   "@media": {
-    "screen and (min-width: 786px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       display: "flex",
       flexDirection: "row-reverse",
       gap: "56px",
@@ -19,7 +21,7 @@ export const imageWrapper = style({
   marginBottom: "16px",
 
   "@media": {
-    "screen and (min-width: 786px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       height: "436px",
 
       marginBottom: "0",
@@ -31,7 +33,7 @@ export const text = style({
   flex: "1",
 
   lineHeight: "2 !important",
-  textAlign: "justify"
+  textAlign: "justify",
 });
 
 export const image = style({

@@ -1,5 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
+import { MORE_DESKTOP_MEDIA_QUERY } from "@/consts/mediaQuery";
+
 export const tabsContainer = style({
   width: "100%",
   display: "flex",
@@ -11,7 +13,7 @@ export const tabsContainer = style({
   margin: "40px 0",
 
   "@media": {
-    "screen and (min-width: 786px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       justifyContent: "normal",
     },
   },

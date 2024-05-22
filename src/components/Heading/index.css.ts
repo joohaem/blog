@@ -1,11 +1,13 @@
 import { style } from "@vanilla-extract/css";
 
+import { MORE_DESKTOP_MEDIA_QUERY } from "@/consts/mediaQuery";
+
 export const largeDisplayHeading = style({
   fontSize: "36px",
   lineHeight: "150%",
   letterSpacing: "0.15em",
   "@media": {
-    "screen and (min-width: 768px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       fontSize: "52px",
     },
   },
@@ -14,7 +16,7 @@ export const mediumDisplayHeading = style({
   fontSize: "24px",
   lineHeight: "150%",
   "@media": {
-    "screen and (min-width: 768px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       fontSize: "40px",
     },
   },
@@ -23,7 +25,7 @@ export const mediumTitleHeading = style({
   fontSize: "17px",
   lineHeight: "150%",
   "@media": {
-    "screen and (min-width: 768px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       fontSize: "20px",
     },
   },
@@ -32,7 +34,7 @@ export const smallTitleHeading = style({
   fontSize: "16px",
   lineHeight: "150%",
   "@media": {
-    "screen and (min-width: 768px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       fontSize: "18px",
     },
   },
@@ -41,7 +43,7 @@ export const extraSmallTitleHeading = style({
   fontSize: "15px",
   lineHeight: "150%",
   "@media": {
-    "screen and (min-width: 768px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       fontSize: "16px",
     },
   },
