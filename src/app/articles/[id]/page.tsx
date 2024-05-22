@@ -1,8 +1,9 @@
+import { Metadata, ResolvingMetadata } from "next";
+
 import ArticlePage from "@/components/ArticlePage";
 import Comments from "@/components/Comments";
 import Header from "@/components/Header";
 import { getArticleById, getArticles } from "@/core/blog";
-import { Metadata, ResolvingMetadata } from "next";
 
 interface ArticleProps {
   params: {

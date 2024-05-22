@@ -1,27 +1,26 @@
-import { PropsWithChildren } from "react";
 import clsx from "clsx";
+import { PropsWithChildren } from "react";
 
 import {
   extraLightWeight,
-  largeDisplayHeading,
   extraSmallTitleHeading,
+  largeDisplayHeading,
   lightWeight,
   mediumDisplayHeading,
   mediumTitleHeading,
   mediumWeight,
+  regularWeight,
   semiBoldWeight,
   serifFont,
   smallTitleHeading,
-  regularWeight,
 } from "./index.css";
 
-
-interface HeadingProps extends Omit<HeadingTagProps, 'className'> {
+interface HeadingProps extends Omit<HeadingTagProps, "className"> {
   size?: "display-l" | "display-m" | "title-m" | "title-s" | "title-xs";
-  weight?: 'extraLight' | 'light' | "regular" | 'medium' | 'semiBold';
+  weight?: "extraLight" | "light" | "regular" | "medium" | "semiBold";
   serif?: boolean;
   className?: string;
-};
+}
 
 const sizeCss = {
   "display-l": largeDisplayHeading,
@@ -29,35 +28,33 @@ const sizeCss = {
   "title-m": mediumTitleHeading,
   "title-s": smallTitleHeading,
   "title-xs": extraSmallTitleHeading,
-} as const
+} as const;
 const weightCss = {
-  "extraLight": extraLightWeight,
-  "light": lightWeight,
-  "regular": regularWeight,
-  "medium": mediumWeight,
-  "semiBold": semiBoldWeight
-} as const
+  extraLight: extraLightWeight,
+  light: lightWeight,
+  regular: regularWeight,
+  medium: mediumWeight,
+  semiBold: semiBoldWeight,
+} as const;
 
 export default function Heading({
   size = "title-m",
-  weight = 'regular',
+  weight = "regular",
   serif = false,
   className,
   ...props
 }: HeadingProps) {
   return (
-    <HeadingTag 
-      className={
-        clsx(
-          sizeCss[size],
-          weightCss[weight],
-          serif && serifFont,
-          className
-        )
-      }
+    <HeadingTag
+      className={clsx(
+        sizeCss[size],
+        weightCss[weight],
+        serif && serifFont,
+        className
+      )}
       {...props}
     />
-  )
+  );
 }
 
 interface HeadingTagProps extends PropsWithChildren {
@@ -65,28 +62,12 @@ interface HeadingTagProps extends PropsWithChildren {
   className: string;
 }
 
-function HeadingTag({
-  as = 'h2',
-  className,
-  children
-}: HeadingTagProps) {
-  if(as === 'h1') return (
-    <h1 className={className}>{children}</h1>
-  )
-  if(as === 'h2') return (
-    <h2 className={className}>{children}</h2>
-  )
-  if(as === 'h3') return (
-    <h3 className={className}>{children}</h3>
-  )
-  if(as === 'h4') return (
-    <h4 className={className}>{children}</h4>
-  )
-  if(as === 'h5') return (
-    <h5 className={className}>{children}</h5>
-  )
-  if(as === 'h6') return (
-    <h6 className={className}>{children}</h6>
-  )
+function HeadingTag({ as = "h2", className, children }: HeadingTagProps) {
+  if (as === "h1") return <h1 className={className}>{children}</h1>;
+  if (as === "h2") return <h2 className={className}>{children}</h2>;
+  if (as === "h3") return <h3 className={className}>{children}</h3>;
+  if (as === "h4") return <h4 className={className}>{children}</h4>;
+  if (as === "h5") return <h5 className={className}>{children}</h5>;
+  if (as === "h6") return <h6 className={className}>{children}</h6>;
   return null;
 }

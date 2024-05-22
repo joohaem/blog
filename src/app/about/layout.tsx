@@ -1,9 +1,11 @@
+import { PropsWithChildren } from "react";
+
 import Container from "@/components/Container";
 import Header from "@/components/Header";
 import PageTitle from "@/components/PageTitle";
-import { PropsWithChildren } from "react";
-import { tabsContainer } from "./layout.css";
 import RouteTab, { RouteTab as TRouteTab } from "@/components/RouteTab";
+
+import { tabsContainer } from "./layout.css";
 
 const TABS: TRouteTab[] = [
   {

@@ -1,14 +1,10 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 import Container from "@/components/Container";
 import RouteTab, { RouteTab as TRouteTab } from "@/components/RouteTab";
 
-import {
-  headerContainer,
-  headerLayout,
-  tabsWrapper,
-} from "./index.css";
+import { headerContainer, headerLayout, tabsWrapper } from "./index.css";
 
 const TABS: TRouteTab[] = [
   {

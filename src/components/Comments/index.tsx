@@ -1,13 +1,14 @@
-"use client"
+"use client";
 
 import React, { useEffect, useRef } from "react";
+
 import { containerRoot } from "./index.css";
 
 const Comments = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if(!ref.current) return;
+    if (!ref.current) return;
 
     const script = document.createElement("script");
     script.src = "https://utteranc.es/client.js";

@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Source_Serif_4 } from "next/font/google";
+import "./globals.css";
+
 import clsx from "clsx";
+import type { Metadata } from "next";
+import { Source_Serif_4 } from "next/font/google";
+import localFont from "next/font/local";
 
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { GOOGLE_ANALYTICS, GOOGLE_VERIFICATION_CODE } from "@/consts/env";
 
-import "./globals.css";
 import { BASE_URL } from "./const";
 import { bodyContainer } from "./layout.css";
 

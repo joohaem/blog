@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "no-empty-pattern": "off",
+    "simple-import-sort/imports": "error",
+    "no-unused-vars": "warn",
+    "eol-last": "error"
+  }
 }

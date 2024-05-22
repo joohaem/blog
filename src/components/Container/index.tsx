@@ -1,5 +1,5 @@
-import React, { HTMLAttributes, PropsWithChildren } from "react";
 import clsx from "clsx";
+import React, { HTMLAttributes, PropsWithChildren } from "react";
 
 import { containerRoot } from "./index.css";
 

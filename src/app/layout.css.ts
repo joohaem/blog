@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 
 export const bodyContainer = style({
-  minHeight: '100vh',
+  minHeight: "100vh",
   paddingBottom: "64px",
-})
+});

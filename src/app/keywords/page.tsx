@@ -1,9 +1,9 @@
 import Container from "@/components/Container";
 import Header from "@/components/Header";
+import KeywordPageContent from "@/components/KeywordPageContent";
 import PageTitle from "@/components/PageTitle";
 
 import { contentContainer } from "./page.css";
-import KeywordPageContent from "@/components/KeywordPageContent";
 
 export default function Keywords() {
   return (

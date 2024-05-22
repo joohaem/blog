@@ -9,5 +9,5 @@ export const imageWrapper = style({
 });
 
 export const image = style({
-  objectFit: 'contain'
-})
+  objectFit: "contain",
+});

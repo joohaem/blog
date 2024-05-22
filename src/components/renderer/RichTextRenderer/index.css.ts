@@ -1,23 +1,22 @@
 import { style } from "@vanilla-extract/css";
 
-
 export const bold = style({
-  fontWeight: '600'
-})
+  fontWeight: "600",
+});
 
 export const underline = style({
-  textDecoration: 'underline'
-})
+  textDecoration: "underline",
+});
 
 export const italic = style({
-  fontStyle: 'italic'
-})
+  fontStyle: "italic",
+});
 
 export const strikethrough = style({
-  textDecoration: 'line-through'
-})
+  textDecoration: "line-through",
+});
 
 export const anchor = style({
-  textDecoration: '#6d6875 wavy underline',
-  cursor: 'pointer'
-})
+  textDecoration: "#6d6875 wavy underline",
+  cursor: "pointer",
+});
