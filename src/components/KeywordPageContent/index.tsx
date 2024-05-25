@@ -1,11 +1,8 @@
-import Heading from "@/components/Heading";
 import { Keyword, KEYWORDS } from "@/consts/keywords";
 
-import Label from "../Label";
+import KeywordContentBox from "./components/KeywordContentBox";
 import {
   bigDesktopKeywordsWrapper,
-  contentCategory,
-  contentItem,
   desktopKeywordsWrapper,
   mobileKeywordsWrapper,
   oneLineOfFourLinesContainer,
@@ -82,136 +79,95 @@ keywords.forEach((keyword, i) => {
   }
 });
 
-// TODO :: KeywordContentBox component
 export default function KeywordPageContent() {
   return (
     <>
       <div className={mobileKeywordsWrapper}>
-        {keywords.map(({ title, category }) => (
-          <div key={`${category}-${title}`} className={contentItem}>
-            <Heading size="title-xs" weight="medium">
-              {title}
-            </Heading>
-            <Label size="m" className={contentCategory}>
-              {category}
-            </Label>
-          </div>
+        {keywords.map((keyword) => (
+          <KeywordContentBox
+            key={`${keyword.category}-${keyword.title}`}
+            {...keyword}
+          />
         ))}
       </div>
 
       <div className={tabletKeywordsWrapper}>
         <div className={oneLineOfTwoLinesContainer}>
-          {keywordGroupByTwoLines.first.map(({ title, category }) => (
-            <div key={`${category}-${title}`} className={contentItem}>
-              <Heading size="title-xs" weight="medium">
-                {title}
-              </Heading>
-              <Label size="m" className={contentCategory}>
-                {category}
-              </Label>
-            </div>
+          {keywordGroupByTwoLines.first.map((keyword) => (
+            <KeywordContentBox
+              key={`${keyword.category}-${keyword.title}`}
+              {...keyword}
+            />
           ))}
         </div>
         <div className={oneLineOfTwoLinesContainer}>
-          {keywordGroupByTwoLines.second.map(({ title, category }) => (
-            <div key={`${category}-${title}`} className={contentItem}>
-              <Heading size="title-xs" weight="medium">
-                {title}
-              </Heading>
-              <Label size="m" className={contentCategory}>
-                {category}
-              </Label>
-            </div>
+          {keywordGroupByTwoLines.second.map((keyword) => (
+            <KeywordContentBox
+              key={`${keyword.category}-${keyword.title}`}
+              {...keyword}
+            />
           ))}
         </div>
       </div>
 
       <div className={desktopKeywordsWrapper}>
         <div className={oneLineOfThreeLinesContainer}>
-          {keywordGroupByThreeLines.first.map(({ title, category }) => (
-            <div key={`${category}-${title}`} className={contentItem}>
-              <Heading size="title-xs" weight="medium">
-                {title}
-              </Heading>
-              <Label size="m" className={contentCategory}>
-                {category}
-              </Label>
-            </div>
+          {keywordGroupByThreeLines.first.map((keyword) => (
+            <KeywordContentBox
+              key={`${keyword.category}-${keyword.title}`}
+              {...keyword}
+            />
           ))}
         </div>
         <div className={oneLineOfThreeLinesContainer}>
-          {keywordGroupByThreeLines.second.map(({ title, category }) => (
-            <div key={`${category}-${title}`} className={contentItem}>
-              <Heading size="title-xs" weight="medium">
-                {title}
-              </Heading>
-              <Label size="m" className={contentCategory}>
-                {category}
-              </Label>
-            </div>
+          {keywordGroupByThreeLines.second.map((keyword) => (
+            <KeywordContentBox
+              key={`${keyword.category}-${keyword.title}`}
+              {...keyword}
+            />
           ))}
         </div>
         <div className={oneLineOfThreeLinesContainer}>
-          {keywordGroupByThreeLines.third.map(({ title, category }) => (
-            <div key={`${category}-${title}`} className={contentItem}>
-              <Heading size="title-xs" weight="medium">
-                {title}
-              </Heading>
-              <Label size="m" className={contentCategory}>
-                {category}
-              </Label>
-            </div>
+          {keywordGroupByThreeLines.third.map((keyword) => (
+            <KeywordContentBox
+              key={`${keyword.category}-${keyword.title}`}
+              {...keyword}
+            />
           ))}
         </div>
       </div>
 
       <div className={bigDesktopKeywordsWrapper}>
         <div className={oneLineOfFourLinesContainer}>
-          {keywordGroupByFourLines.first.map(({ title, category }) => (
-            <div key={`${category}-${title}`} className={contentItem}>
-              <Heading size="title-xs" weight="medium">
-                {title}
-              </Heading>
-              <Label size="m" className={contentCategory}>
-                {category}
-              </Label>
-            </div>
+          {keywordGroupByFourLines.first.map((keyword) => (
+            <KeywordContentBox
+              key={`${keyword.category}-${keyword.title}`}
+              {...keyword}
+            />
           ))}
         </div>
         <div className={oneLineOfFourLinesContainer}>
-          {keywordGroupByFourLines.second.map(({ title, category }) => (
-            <div key={`${category}-${title}`} className={contentItem}>
-              <Heading size="title-xs" weight="medium">
-                {title}
-              </Heading>
-              <Label size="m" className={contentCategory}>
-                {category}
-              </Label>
-            </div>
+          {keywordGroupByFourLines.second.map((keyword) => (
+            <KeywordContentBox
+              key={`${keyword.category}-${keyword.title}`}
+              {...keyword}
+            />
           ))}
         </div>
         <div className={oneLineOfFourLinesContainer}>
-          {keywordGroupByFourLines.third.map(({ title, category }) => (
-            <div key={`${category}-${title}`} className={contentItem}>
-              <Heading size="title-xs" weight="medium">
-                {title}
-              </Heading>
-              <Label size="m" className={contentCategory}>
-                {category}
-              </Label>
-            </div>
+          {keywordGroupByFourLines.third.map((keyword) => (
+            <KeywordContentBox
+              key={`${keyword.category}-${keyword.title}`}
+              {...keyword}
+            />
           ))}
         </div>
         <div className={oneLineOfFourLinesContainer}>
-          {keywordGroupByFourLines.forth.map(({ title, category }) => (
-            <div key={`${category}-${title}`} className={contentItem}>
-              <Heading size="title-xs" weight="medium">
-                {title}
-              </Heading>
-              <Label size="m" className={contentCategory}>
-                {category}
-              </Label>
-            </div>
+          {keywordGroupByFourLines.forth.map((keyword) => (
+            <KeywordContentBox
+              key={`${keyword.category}-${keyword.title}`}
+              {...keyword}
+            />
           ))}
         </div>
       </div>
