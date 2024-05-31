@@ -2,14 +2,14 @@ import "./globals.css";
 
 import clsx from "clsx";
 import type { Metadata } from "next";
-import { Nanum_Myeongjo, Source_Serif_4 } from "next/font/google";
+import { Nanum_Myeongjo } from "next/font/google";
 import localFont from "next/font/local";
 
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { GOOGLE_ANALYTICS, GOOGLE_VERIFICATION_CODE } from "@/consts/env";
 
 import { BASE_URL } from "./const";
-import { bodyContainer } from "./layout.css";
+import { bodyContainer, resetFontSmoothingForFigmaDesign } from "./layout.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL ?? ""),
@@ -90,7 +90,7 @@ export default function RootLayout({
       className={clsx(pretendardFont.className, nanumMyeongjoFont.variable)}
     >
       {GOOGLE_ANALYTICS ? <GoogleAnalytics gaId={GOOGLE_ANALYTICS} /> : null}
-      <body className={bodyContainer}>
+      <body className={clsx(bodyContainer, resetFontSmoothingForFigmaDesign)}>
         {children}
         <div id="portal-root"></div>
       </body>
