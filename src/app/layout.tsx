@@ -9,7 +9,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { GOOGLE_ANALYTICS, GOOGLE_VERIFICATION_CODE } from "@/consts/env";
 
 import { BASE_URL } from "./const";
-import { bodyContainer, resetFontSmoothingForFigmaDesign } from "./layout.css";
+import { bodyContainer } from "./layout.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL ?? ""),
@@ -90,7 +90,7 @@ export default function RootLayout({
       className={clsx(pretendardFont.className, nanumMyeongjoFont.variable)}
     >
       {GOOGLE_ANALYTICS ? <GoogleAnalytics gaId={GOOGLE_ANALYTICS} /> : null}
-      <body className={clsx(bodyContainer, resetFontSmoothingForFigmaDesign)}>
+      <body className={bodyContainer}>
         {children}
         <div id="portal-root"></div>
       </body>

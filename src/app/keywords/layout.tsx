@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import Header from "@/components/Header";
-import KeywordPageContent from "@/components/KeywordPageContent";
+import KeywordsPageContent from "@/components/KeywordsPageContent";
 import PageTitle from "@/components/PageTitle";
 
 import { contentContainer } from "./layout.css";
@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Header />
       <PageTitle title="MY KEYWORDS" />
       <Container className={contentContainer}>
-        <KeywordPageContent />
+        <KeywordsPageContent />
       </Container>
       {children}
     </>

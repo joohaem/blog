@@ -19,6 +19,7 @@ export const backdrop = style({
 });
 
 export const mobileModalContainer = style({
+  position: "relative",
   height: "100%",
   width: "100%",
   backgroundColor: "white",
@@ -30,13 +31,31 @@ export const mobileModalContainer = style({
 });
 
 export const moreTabletModalContainer = style({
+  position: "relative",
   height: "85%",
   width: "85%",
   margin: "0 auto",
   backgroundColor: "white",
+  borderRadius: "10px 10px 0 0",
   "@media": {
     [LESS_MOBILE_MEDIA_QUERY]: {
       display: "none",
     },
+  },
+});
+
+export const mobileCloseIcon = style({
+  position: "absolute",
+  top: "20px",
+  right: "18px",
+});
+
+export const moreTabletCloseIcon = style({
+  position: "absolute",
+  top: "-28px",
+  right: "8px",
+  cursor: "pointer",
+  ":hover": {
+    backgroundColor: "rgba(255, 255, 255, 0.2)",
   },
 });

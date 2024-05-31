@@ -79,7 +79,7 @@ keywords.forEach((keyword, i) => {
   }
 });
 
-export default function KeywordPageContent() {
+export default function KeywordsPageContent() {
   return (
     <>
       <div className={mobileKeywordsWrapper}>
