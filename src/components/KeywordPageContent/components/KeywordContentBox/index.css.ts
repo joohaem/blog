@@ -1,6 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
 export const contentItem = style({
+  display: "block",
   padding: "14px 18px",
   borderRadius: "10px",
   border: "1px solid rgba(1, 1, 1, 0.30)",

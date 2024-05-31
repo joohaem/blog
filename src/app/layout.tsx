@@ -90,7 +90,10 @@ export default function RootLayout({
       className={clsx(pretendardFont.className, sourceSerif4Font.variable)}
     >
       {GOOGLE_ANALYTICS ? <GoogleAnalytics gaId={GOOGLE_ANALYTICS} /> : null}
-      <body className={bodyContainer}>{children}</body>
+      <body className={bodyContainer}>
+        {children}
+        <div id="portal-root"></div>
+      </body>
     </html>
   );
 }
