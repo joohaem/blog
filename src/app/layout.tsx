@@ -2,7 +2,7 @@ import "./globals.css";
 
 import clsx from "clsx";
 import type { Metadata } from "next";
-import { Source_Serif_4 } from "next/font/google";
+import { Nanum_Myeongjo, Source_Serif_4 } from "next/font/google";
 import localFont from "next/font/local";
 
 import GoogleAnalytics from "@/components/GoogleAnalytics";
@@ -72,11 +72,11 @@ const pretendardFont = localFont({
   display: "swap",
 });
 
-const sourceSerif4Font = Source_Serif_4({
-  weight: ["200", "300", "400"],
-  subsets: ["latin", "latin-ext"],
+const nanumMyeongjoFont = Nanum_Myeongjo({
+  weight: ["400", "700"],
+  subsets: ["latin"],
   display: "swap",
-  variable: "--font-source-serif-4",
+  variable: "--font-nanum-myeongjo",
 });
 
 export default function RootLayout({
@@ -87,7 +87,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx(pretendardFont.className, sourceSerif4Font.variable)}
+      className={clsx(pretendardFont.className, nanumMyeongjoFont.variable)}
     >
       {GOOGLE_ANALYTICS ? <GoogleAnalytics gaId={GOOGLE_ANALYTICS} /> : null}
       <body className={bodyContainer}>

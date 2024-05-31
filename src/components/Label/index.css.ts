@@ -13,7 +13,7 @@ export const largeTabLabel = style({
   },
 });
 export const largeLabel = style({
-  fontSize: "12px",
+  fontSize: "11px",
   lineHeight: "150%",
   "@media": {
     [MORE_DESKTOP_MEDIA_QUERY]: {
@@ -32,5 +32,5 @@ export const mediumLabel = style({
 });
 
 export const serifFont = style({
-  fontFamily: "var(--font-source-serif-4)",
+  fontFamily: "var(--font-nanum-myeongjo)",
 });

@@ -47,8 +47,13 @@ export const titleContainer = style({
 });
 
 export const articleTitle = style({
-  marginTop: "10px",
   color: "#ffffff",
+  marginTop: "6px",
+  "@media": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
+      marginTop: "12px",
+    },
+  },
 });
 
 export const articleInfo = style({

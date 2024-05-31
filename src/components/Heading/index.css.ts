@@ -3,21 +3,22 @@ import { style } from "@vanilla-extract/css";
 import { MORE_DESKTOP_MEDIA_QUERY } from "@/consts/mediaQuery";
 
 export const largeDisplayHeading = style({
-  fontSize: "36px",
+  fontSize: "30px",
   lineHeight: "150%",
-  letterSpacing: "0.15em",
+  letterSpacing: "3.6px",
   "@media": {
     [MORE_DESKTOP_MEDIA_QUERY]: {
-      fontSize: "52px",
+      fontSize: "44px",
+      letterSpacing: "5.28px",
     },
   },
 });
 export const mediumDisplayHeading = style({
-  fontSize: "24px",
+  fontSize: "22px",
   lineHeight: "150%",
   "@media": {
     [MORE_DESKTOP_MEDIA_QUERY]: {
-      fontSize: "40px",
+      fontSize: "38px",
     },
   },
 });
@@ -66,5 +67,5 @@ export const semiBoldWeight = style({
 });
 
 export const serifFont = style({
-  fontFamily: "var(--font-source-serif-4)",
+  fontFamily: "var(--font-nanum-myeongjo)",
 });
