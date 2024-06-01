@@ -12,11 +12,11 @@ const TABS: TRouteTab[] = [
     text: "ABOUT",
     href: "/about",
   },
-  // {
-  //   id: "keyword",
-  //   text: "My Keywords",
-  //   href: "/keywords",
-  // },
+  {
+    id: "keyword",
+    text: "KEYWORDS",
+    href: "/keywords",
+  },
   {
     id: "article",
     text: "ARTICLES",

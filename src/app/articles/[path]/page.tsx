@@ -27,7 +27,7 @@ export async function generateMetadata(
   const article = await getArticleByUrlPath(id);
 
   return {
-    title: article.title,
+    title: `${article.title} | SNUPI Blog`,
     description: "SNUPI Blog",
     keywords: [
       "snupi",
