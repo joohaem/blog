@@ -1,11 +1,32 @@
-import { style } from "@vanilla-extract/css";
+import { keyframes, style } from "@vanilla-extract/css";
 
 import {
   LESS_MOBILE_MEDIA_QUERY,
   MORE_TABLET_MEDIA_QUERY,
 } from "@/consts/mediaQuery";
 
+const fadeIn = keyframes({
+  "0%": {
+    opacity: "0",
+  },
+  "100%": {
+    opacity: "1",
+  },
+});
+
+const fadeInNGoUp = keyframes({
+  "0%": {
+    opacity: "0",
+    transform: "translateY(120px)",
+  },
+  "100%": {
+    opacity: "1",
+    transform: "translateY(0px)",
+  },
+});
+
 export const backdrop = style({
+  animation: `${fadeIn} 0.3s ease`,
   position: "fixed",
   top: "0",
   left: "0",
@@ -19,6 +40,7 @@ export const backdrop = style({
 });
 
 export const mobileModalContainer = style({
+  animation: `${fadeInNGoUp} 0.3s ease`,
   position: "relative",
   height: "100%",
   width: "100%",
@@ -31,6 +53,7 @@ export const mobileModalContainer = style({
 });
 
 export const moreTabletModalContainer = style({
+  animation: `${fadeInNGoUp} 0.3s ease`,
   position: "relative",
   height: "85%",
   width: "85%",
