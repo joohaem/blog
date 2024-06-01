@@ -1,31 +1,27 @@
-"use client";
-
-import { useRouter } from "next/navigation";
 import React from "react";
 
-import Heading from "@/components/Heading";
-import Modal from "@/components/Modal";
-import Text from "@/components/Text";
+import KeywordPageModal from "@/components/KeywordPageModal";
+import { KEYWORDS } from "@/consts/keywords";
 
-import { container, content, divider, title } from "./page.css";
+interface KeywordProps {
+  params: {
+    path: string;
+  };
+}
 
-export default function Keyword() {
-  const router = useRouter();
-  return (
-    <Modal
-      isOpen
-      onClose={() => {
-        router.push("/keywords");
-      }}
-      className={container}
-    >
-      <Heading size="title-m" weight="medium" className={title}>
-        :Title
-      </Heading>
-      <div className={divider}></div>
-      <Text size="s" className={content}>
-        :Content
-      </Text>
-    </Modal>
-  );
+export async function generateStaticParams() {
+  return KEYWORDS.map((keyword) => ({
+    path: keyword.pathUrl,
+  }));
+}
+
+// TODO :: SEO setting
+export default function Keyword({ params: { path } }: KeywordProps) {
+  const keyword = KEYWORDS.find((keyword) => keyword.pathUrl === path);
+
+  if (!keyword) {
+    throw new Error("Invalid keyword url.");
+  }
+
+  return <KeywordPageModal keyword={keyword} />;
 }

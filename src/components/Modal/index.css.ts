@@ -35,7 +35,7 @@ export const backdrop = style({
   backgroundColor: "rgba(1, 1, 1, 0.5)",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "end",
+  justifyContent: "flex-end",
   zIndex: "100", // TODO :: Refactor zIndex consts
 });
 
@@ -47,7 +47,7 @@ export const mobileModalContainer = style({
   backgroundColor: "white",
   "@media": {
     [MORE_TABLET_MEDIA_QUERY]: {
-      display: "none",
+      display: "none !important",
     },
   },
 });
@@ -62,7 +62,7 @@ export const moreTabletModalContainer = style({
   borderRadius: "10px 10px 0 0",
   "@media": {
     [LESS_MOBILE_MEDIA_QUERY]: {
-      display: "none",
+      display: "none !important",
     },
   },
 });

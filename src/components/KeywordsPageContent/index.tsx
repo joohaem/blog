@@ -11,27 +11,8 @@ import {
   tabletKeywordsWrapper,
 } from "./index.css";
 
-const keywords = [
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-  ...KEYWORDS,
-];
-
 // TODO :: Seperate
+const keywords: Keyword[] = [];
 const keywordGroupByTwoLines: Record<"first" | "second", Keyword[]> = {
   first: [],
   second: [],
@@ -53,7 +34,9 @@ const keywordGroupByFourLines: Record<
   third: [],
   forth: [],
 };
-keywords.forEach((keyword, i) => {
+KEYWORDS.forEach((keyword, i) => {
+  keywords.push(keyword);
+
   if (i % 2 === 0) {
     keywordGroupByTwoLines.first.push(keyword);
   } else if (i % 2 === 1) {

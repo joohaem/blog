@@ -1,10 +1,8 @@
 "use client";
 
 import clsx from "clsx";
-import Image from "next/image";
 import React, { PropsWithChildren, useEffect } from "react";
 
-import closeIcon from "@/assets/icons/close.svg";
 import Portal from "@/components/Modal/Portal";
 
 import CloseIcon from "../CloseIcon";
