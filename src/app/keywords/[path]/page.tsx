@@ -1,7 +1,8 @@
 import React from "react";
 
-import KeywordPageModal from "@/components/KeywordPageModal";
 import { KEYWORDS } from "@/consts/keywords";
+
+import KeywordPageModal from "./components/KeywordPageModal";
 
 interface KeywordProps {
   params: {

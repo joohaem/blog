@@ -23,6 +23,7 @@ interface ArticlePageProps {
   };
 }
 
+// TOOD:: Refactor to page components
 async function ArticlePage({ params }: ArticlePageProps) {
   const urlPath = params.path;
   const article = await getArticleByUrlPath(urlPath);
