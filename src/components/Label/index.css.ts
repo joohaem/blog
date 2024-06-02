@@ -2,6 +2,12 @@ import { style } from "@vanilla-extract/css";
 
 import { MORE_DESKTOP_MEDIA_QUERY } from "@/consts/mediaQuery";
 
+export const xLargeTabLabel = style({
+  fontSize: "18px",
+  lineHeight: "150%",
+  letterSpacing: "2.16px",
+  // MEMO :: only mobile for now
+});
 export const largeTabLabel = style({
   fontSize: "15px",
   lineHeight: "150%",

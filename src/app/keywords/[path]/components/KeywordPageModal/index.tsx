@@ -16,7 +16,6 @@ interface KeywordProps {
 
 export default function KeywordPageModal({ keyword }: KeywordProps) {
   const router = useRouter();
-  console.log("keyword", keyword);
   return (
     <Modal
       isOpen

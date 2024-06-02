@@ -1,15 +1,22 @@
 import clsx from "clsx";
 import { PropsWithChildren } from "react";
 
-import { largeLabel, largeTabLabel, mediumLabel, serifFont } from "./index.css";
+import {
+  largeLabel,
+  largeTabLabel,
+  mediumLabel,
+  serifFont,
+  xLargeTabLabel,
+} from "./index.css";
 
 export interface LabelProps {
-  size?: "tab-l" | "l" | "m";
+  size?: "tab-xl" | "tab-l" | "l" | "m";
   serif?: boolean;
   className?: string;
 }
 
 const sizeCss = {
+  "tab-xl": xLargeTabLabel,
   "tab-l": largeTabLabel,
   l: largeLabel,
   m: mediumLabel,
