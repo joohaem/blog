@@ -1,6 +1,7 @@
-import { FC, ReactNode } from "react";
-import { activeChip, inactiveChip } from "./index.css";
+import { ReactNode } from "react";
+
 import Label from "../Label";
+import { activeChip, inactiveChip } from "./index.css";
 
 interface ChipProps {
   children: ReactNode;
@@ -8,7 +9,11 @@ interface ChipProps {
 }
 
 function Chip({ children, active = false }: ChipProps) {
-  return <Label size="tab-l" className={active ? activeChip : inactiveChip}>{children}</Label>;
+  return (
+    <Label size="tab-l" className={active ? activeChip : inactiveChip}>
+      {children}
+    </Label>
+  );
 }
 
 export default Chip;

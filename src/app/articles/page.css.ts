@@ -1,5 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
+import { MORE_DESKTOP_MEDIA_QUERY } from "@/consts/mediaQuery";
+
 export const categoryChipsWrapper = style({
   position: "sticky",
   top: "0",
@@ -11,7 +13,7 @@ export const categoryChipsWrapper = style({
   marginTop: "40px",
 
   "@media": {
-    "screen and (min-width: 786px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       justifyContent: "normal",
     },
   },
@@ -32,7 +34,7 @@ export const articleInfo = style({
 export const articleTitle = style({
   marginTop: "4px",
   "@media": {
-    "screen and (min-width: 786px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       marginTop: "8px",
     },
   },
@@ -48,7 +50,7 @@ export const articleDescription = style({
 
   marginTop: "4px",
   "@media": {
-    "screen and (min-width: 786px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       marginTop: "8px",
       height: "56px",
     },
@@ -68,7 +70,7 @@ export const thumbnailWrapper = style({
   borderRadius: "10px",
 
   "@media": {
-    "screen and (min-width: 786px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       width: "276px",
       minWidth: "276px",
       height: "123px",

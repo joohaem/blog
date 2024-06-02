@@ -1,6 +1,7 @@
-import { container, pageTitleRoot, title } from "./index.css";
 import Container from "@/components/Container";
 import Heading from "@/components/Heading";
+
+import { container, pageTitleRoot, title } from "./index.css";
 
 interface PageTitleProps {
   title: string;

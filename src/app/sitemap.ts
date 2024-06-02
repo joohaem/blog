@@ -1,11 +1,16 @@
 import { MetadataRoute } from "next";
 
 import { BASE_URL } from "@/consts/env";
+import { KEYWORDS } from "@/consts/keywords";
 import { getArticles } from "@/core/blog";
 
 const Sitemap = async (): Promise<MetadataRoute.Sitemap> => {
   const articles = (await getArticles()).map((article) => ({
     url: `${BASE_URL}/articles/${article.urlPath}`,
+    lastModified: new Date(),
+  }));
+  const keywords = KEYWORDS.map((keyword) => ({
+    url: `${BASE_URL}/keywords/${keyword.pathUrl}`,
     lastModified: new Date(),
   }));
 
@@ -39,6 +44,7 @@ const Sitemap = async (): Promise<MetadataRoute.Sitemap> => {
       lastModified: new Date(),
     },
     ...articles,
+    ...keywords,
   ];
 };
 

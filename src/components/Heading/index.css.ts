@@ -1,21 +1,24 @@
 import { style } from "@vanilla-extract/css";
 
+import { MORE_DESKTOP_MEDIA_QUERY } from "@/consts/mediaQuery";
+
 export const largeDisplayHeading = style({
-  fontSize: "36px",
+  fontSize: "30px",
   lineHeight: "150%",
-  letterSpacing: "0.15em",
+  letterSpacing: "3.6px",
   "@media": {
-    "screen and (min-width: 768px)": {
-      fontSize: "52px",
+    [MORE_DESKTOP_MEDIA_QUERY]: {
+      fontSize: "44px",
+      letterSpacing: "5.28px",
     },
   },
 });
 export const mediumDisplayHeading = style({
-  fontSize: "24px",
+  fontSize: "22px",
   lineHeight: "150%",
   "@media": {
-    "screen and (min-width: 768px)": {
-      fontSize: "40px",
+    [MORE_DESKTOP_MEDIA_QUERY]: {
+      fontSize: "38px",
     },
   },
 });
@@ -23,7 +26,7 @@ export const mediumTitleHeading = style({
   fontSize: "17px",
   lineHeight: "150%",
   "@media": {
-    "screen and (min-width: 768px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       fontSize: "20px",
     },
   },
@@ -32,7 +35,7 @@ export const smallTitleHeading = style({
   fontSize: "16px",
   lineHeight: "150%",
   "@media": {
-    "screen and (min-width: 768px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       fontSize: "18px",
     },
   },
@@ -41,7 +44,7 @@ export const extraSmallTitleHeading = style({
   fontSize: "15px",
   lineHeight: "150%",
   "@media": {
-    "screen and (min-width: 768px)": {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       fontSize: "16px",
     },
   },
@@ -64,5 +67,5 @@ export const semiBoldWeight = style({
 });
 
 export const serifFont = style({
-  fontFamily: "var(--font-source-serif-4)",
+  fontFamily: "var(--font-nanum-myeongjo)",
 });

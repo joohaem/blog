@@ -1,5 +1,10 @@
 import { style } from "@vanilla-extract/css";
 
+import {
+  DESKTOP_MEDIA_QUERY,
+  MORE_BIG_DESKTOP_MEDIA_QUERY,
+} from "@/consts/mediaQuery";
+
 export const contentsContainer = style({
   width: "100%",
   display: "flex",
@@ -14,11 +19,11 @@ export const content = style({
 
   width: "100%",
   "@media": {
-    "screen and (min-width: 768px) and (max-width: 1194px)": {
-      width: "calc((100% - 30px) / 2)"
+    [DESKTOP_MEDIA_QUERY]: {
+      width: "calc((100% - 30px) / 2)",
     },
-    "screen and (min-width: 1194px)": {
-      width: "calc((100% - 60px) / 3)"
+    [MORE_BIG_DESKTOP_MEDIA_QUERY]: {
+      width: "calc((100% - 60px) / 3)",
     },
   },
 

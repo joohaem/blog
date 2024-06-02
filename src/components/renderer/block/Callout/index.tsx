@@ -1,13 +1,13 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import { PickNotionBlock } from '@/core/notion/types';
+import Text from "@/components/Text";
+import { PickNotionBlock } from "@/core/notion/types";
 
-import RichTextRenderer from '../../RichTextRenderer';
-import { container } from './index.css';
-import Text from '@/components/Text';
+import RichTextRenderer from "../../RichTextRenderer";
+import { container } from "./index.css";
 
 interface CalloutProps {
-  block: PickNotionBlock<'callout'>;
+  block: PickNotionBlock<"callout">;
 }
 
 const Callout: FC<CalloutProps> = ({ block }) => {

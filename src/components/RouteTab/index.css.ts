@@ -7,6 +7,12 @@ export const tab = style({
   display: "flex",
   alignItems: "center",
 });
+export const tabOnBlack = style([
+  tab,
+  {
+    color: "white",
+  },
+]);
 
 export const inactiveTab = style([
   tab,
@@ -15,6 +21,16 @@ export const inactiveTab = style([
 
     ":hover": {
       color: "#010101",
+    },
+  },
+]);
+export const inactiveTabOnBlack = style([
+  tab,
+  {
+    color: "rgba(255, 255, 255, 0.7)",
+
+    ":hover": {
+      color: "white",
     },
   },
 ]);

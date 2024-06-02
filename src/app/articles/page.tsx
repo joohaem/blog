@@ -1,14 +1,16 @@
-import Link from "next/link";
-import Image from "next/image";
 import { format } from "date-fns";
 import { decode, encode } from "js-base64";
+import Image from "next/image";
+import Link from "next/link";
 
-import { getArticles } from "@/core/blog";
-import Header from "@/components/Header";
-import Container from "@/components/Container";
-import PageTitle from "@/components/PageTitle";
 import Chip from "@/components/Chip";
+import Container from "@/components/Container";
+import Header from "@/components/Header";
 import Heading from "@/components/Heading";
+import Label from "@/components/Label";
+import PageTitle from "@/components/PageTitle";
+import Text from "@/components/Text";
+import { getArticles } from "@/core/blog";
 
 import {
   articleDescription,
@@ -19,8 +21,6 @@ import {
   thumbnailImage,
   thumbnailWrapper,
 } from "./page.css";
-import Text from "@/components/Text";
-import Label from "@/components/Label";
 
 export async function generateStaticParams() {
   const articles = await getArticles();

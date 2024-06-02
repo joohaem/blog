@@ -1,15 +1,15 @@
 import { style } from "@vanilla-extract/css";
 
 export const container = style({
-  display: 'flex'
-})
+  display: "flex",
+});
 
 export const number = style({
-  paddingRight: '5px',
-})
+  paddingRight: "5px",
+});
 
 export const bodyContainer = style({
-  flex: '1',
-  display: 'flex',
-  flexDirection: 'column'
-})
+  flex: "1",
+  display: "flex",
+  flexDirection: "column",
+});

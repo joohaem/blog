@@ -1,8 +1,9 @@
+import { Metadata, ResolvingMetadata } from "next";
+
 import ArticlePage from "@/components/ArticlePage";
 import Comments from "@/components/Comments";
 import Header from "@/components/Header";
 import { getArticleByUrlPath, getArticles } from "@/core/blog";
-import { Metadata, ResolvingMetadata } from "next";
 
 interface ArticleProps {
   params: {
@@ -26,7 +27,7 @@ export async function generateMetadata(
   const article = await getArticleByUrlPath(id);
 
   return {
-    title: article.title,
+    title: `${article.title} | SNUPI Blog`,
     description: "SNUPI Blog",
     keywords: [
       "snupi",
@@ -59,7 +60,7 @@ export async function generateMetadata(
   };
 }
 
-async function Article({ params }: ArticleProps) {
+function Article({ params }: ArticleProps) {
   return (
     <>
       <Header />

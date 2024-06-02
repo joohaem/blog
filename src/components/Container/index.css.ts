@@ -1,5 +1,7 @@
 import { style } from "@vanilla-extract/css";
 
+import { MORE_TABLET_MEDIA_QUERY } from "@/consts/mediaQuery";
+
 export const containerRoot = style({
   maxWidth: "1194px",
   height: "100%",
@@ -8,13 +10,9 @@ export const containerRoot = style({
   paddingLeft: "18px",
   paddingRight: "18px",
   "@media": {
-    "screen and (min-width: 480px) and (max-width: 1194px)": {
+    [MORE_TABLET_MEDIA_QUERY]: {
       paddingLeft: "30px",
       paddingRight: "30px",
-    },
-    "screen and (min-width: 1194px)": {
-      paddingLeft: "0",
-      paddingRight: "0",
     },
   },
 });

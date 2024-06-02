@@ -1,13 +1,15 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 import Container from "@/components/Container";
 import RouteTab, { RouteTab as TRouteTab } from "@/components/RouteTab";
 
+import Menu from "./components/Menu";
 import {
   headerContainer,
   headerLayout,
-  tabsWrapper,
+  lessTabletMenuButton,
+  moreDesktopTabsWrapper,
 } from "./index.css";
 
 const TABS: TRouteTab[] = [
@@ -16,11 +18,11 @@ const TABS: TRouteTab[] = [
     text: "ABOUT",
     href: "/about",
   },
-  // {
-  //   id: "keyword",
-  //   text: "My Keywords",
-  //   href: "/keywords",
-  // },
+  {
+    id: "keyword",
+    text: "KEYWORDS",
+    href: "/keywords",
+  },
   {
     id: "article",
     text: "ARTICLES",
@@ -36,7 +38,10 @@ export default function Header() {
           <Link href="/">
             <Image src="/logo.svg" alt="logo" width={68} height={30} />
           </Link>
-          <ul className={tabsWrapper}>
+          <div className={lessTabletMenuButton}>
+            <Menu items={TABS} />
+          </div>
+          <ul className={moreDesktopTabsWrapper}>
             {TABS.map(({ id, text, href, exact }) => (
               <RouteTab
                 key={id}

@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Source_Serif_4 } from "next/font/google";
+import "./globals.css";
+
 import clsx from "clsx";
+import type { Metadata } from "next";
+import { Nanum_Myeongjo } from "next/font/google";
+import localFont from "next/font/local";
 
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { GOOGLE_ANALYTICS, GOOGLE_VERIFICATION_CODE } from "@/consts/env";
 
-import "./globals.css";
 import { BASE_URL } from "./const";
 import { bodyContainer } from "./layout.css";
 
@@ -71,11 +72,11 @@ const pretendardFont = localFont({
   display: "swap",
 });
 
-const sourceSerif4Font = Source_Serif_4({
-  weight: ["200", "300", "400"],
-  subsets: ["latin", "latin-ext"],
+const nanumMyeongjoFont = Nanum_Myeongjo({
+  weight: ["400", "700"],
+  subsets: ["latin"],
   display: "swap",
-  variable: "--font-source-serif-4",
+  variable: "--font-nanum-myeongjo",
 });
 
 export default function RootLayout({
@@ -86,10 +87,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={clsx(pretendardFont.className, sourceSerif4Font.variable)}
+      className={clsx(pretendardFont.className, nanumMyeongjoFont.variable)}
     >
       {GOOGLE_ANALYTICS ? <GoogleAnalytics gaId={GOOGLE_ANALYTICS} /> : null}
-      <body className={bodyContainer}>{children}</body>
+      <body className={bodyContainer}>
+        {children}
+        <div id="portal-root"></div>
+      </body>
     </html>
   );
 }

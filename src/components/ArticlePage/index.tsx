@@ -1,19 +1,19 @@
-import Image from "next/image";
 import { format } from "date-fns";
+import Image from "next/image";
 
-import { getArticleByUrlPath } from "@/core/blog";
-import Label from "@/components/Label";
-import Heading from "@/components/Heading";
 import Container from "@/components/Container";
+import Heading from "@/components/Heading";
+import Label from "@/components/Label";
 import { BlockRenderer } from "@/components/renderer/BlockRenderer";
+import { getArticleByUrlPath } from "@/core/blog";
 
 import {
-  bodyContainer,
   articleInfo,
-  thumbnailImageWrapper,
-  thumbnailImage,
   articleTitle,
+  bodyContainer,
   dimmedFilter,
+  thumbnailImage,
+  thumbnailImageWrapper,
   titleContainer,
 } from "./index.css";
 
@@ -23,6 +23,7 @@ interface ArticlePageProps {
   };
 }
 
+// TOOD:: Refactor to page components
 async function ArticlePage({ params }: ArticlePageProps) {
   const urlPath = params.path;
   const article = await getArticleByUrlPath(urlPath);

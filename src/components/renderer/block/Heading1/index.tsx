@@ -1,13 +1,13 @@
-import { FC } from 'react';
+import { FC } from "react";
 
-import { PickNotionBlock } from '@/core/notion/types';
+import Heading from "@/components/Heading";
+import { PickNotionBlock } from "@/core/notion/types";
 
-import RichTextRenderer from '../../RichTextRenderer';
-import Heading from '@/components/Heading';
-import { text } from './index.css';
+import RichTextRenderer from "../../RichTextRenderer";
+import { text } from "./index.css";
 
 interface Heading1Props {
-  block: PickNotionBlock<'heading_1'>;
+  block: PickNotionBlock<"heading_1">;
 }
 
 const Heading1: FC<Heading1Props> = ({ block }) => {
@@ -15,7 +15,9 @@ const Heading1: FC<Heading1Props> = ({ block }) => {
     <RichTextRenderer
       richText={block.heading_1.rich_text}
       render={(children) => (
-        <Heading as="h2" weight='semiBold' className={text}>{children}</Heading>
+        <Heading as="h2" weight="semiBold" className={text}>
+          {children}
+        </Heading>
       )}
     />
   );
