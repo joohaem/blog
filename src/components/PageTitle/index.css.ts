@@ -1,13 +1,13 @@
 import { style } from "@vanilla-extract/css";
 
-import { MORE_TABLET_MEDIA_QUERY } from "@/consts/mediaQuery";
+import { MORE_DESKTOP_MEDIA_QUERY } from "@/consts/mediaQuery";
 
 export const pageTitleRoot = style({
   height: "262px",
   backgroundColor: "#111",
 
   "@media": {
-    [MORE_TABLET_MEDIA_QUERY]: {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       height: "380px",
     },
   },
@@ -21,7 +21,7 @@ export const container = style({
   alignItems: "center",
 
   "@media": {
-    [MORE_TABLET_MEDIA_QUERY]: {
+    [MORE_DESKTOP_MEDIA_QUERY]: {
       justifyContent: "normal",
       alignItems: "flex-end",
 
