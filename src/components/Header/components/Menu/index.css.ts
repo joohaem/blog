@@ -10,7 +10,7 @@ export const backdropContainer = style({
   left: "0",
   right: "0",
   bottom: "0",
-  backgroundColor: "rgba(1, 1, 1, 0.5)",
+  backgroundColor: "rgba(1, 1, 1, 0.7)",
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
