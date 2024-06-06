@@ -20,7 +20,7 @@ export default function KeywordPageModal({ keyword }: KeywordProps) {
     <Modal
       isOpen
       onClose={() => {
-        router.push("/keywords");
+        router.push("/keywords", { scroll: false });
       }}
       className={container}
     >

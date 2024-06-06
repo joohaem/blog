@@ -1,6 +1,6 @@
 import { Keyword, KEYWORDS } from "@/consts/keywords";
 
-import KeywordContentBox from "./components/KeywordContentBox";
+import KeywordContentBox from "../KeywordContentBox";
 import {
   bigDesktopKeywordsWrapper,
   desktopKeywordsWrapper,
