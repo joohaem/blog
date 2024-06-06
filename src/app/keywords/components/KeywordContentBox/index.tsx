@@ -16,11 +16,8 @@ export default function KeywordContentBox({
   category,
   pathUrl,
 }: KeywordContentBoxProps) {
-  useEffect(() => {
-    window.addEventListener('load', () => {console.log("hello")})
-  }, [])
   return (
-    <Link className={contentItem} href={`/keywords/${pathUrl}`} >
+    <Link className={contentItem} href={`/keywords/${pathUrl}`} scroll={false}>
       <Heading size="title-xs" weight="medium">
         {title}
       </Heading>
