@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 import Heading from "@/components/Heading";
 import Label from "@/components/Label";
@@ -16,8 +16,11 @@ export default function KeywordContentBox({
   category,
   pathUrl,
 }: KeywordContentBoxProps) {
+  useEffect(() => {
+    window.addEventListener('load', () => {console.log("hello")})
+  }, [])
   return (
-    <Link className={contentItem} href={`/keywords/${pathUrl}`} scroll={false}>
+    <Link className={contentItem} href={`/keywords/${pathUrl}`} >
       <Heading size="title-xs" weight="medium">
         {title}
       </Heading>
