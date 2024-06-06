@@ -17,7 +17,7 @@ export default function KeywordContentBox({
   pathUrl,
 }: KeywordContentBoxProps) {
   return (
-    <Link className={contentItem} href={`/keywords/${pathUrl}`}>
+    <Link className={contentItem} href={`/keywords/${pathUrl}`} scroll={false}>
       <Heading size="title-xs" weight="medium">
         {title}
       </Heading>
