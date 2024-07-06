@@ -2,6 +2,60 @@ import Link from "next/link";
 
 const KEYWORDS = [
   {
+    title: "TanStack query, invalidate vs refetch",
+    content: (
+      <div>
+        <Link href="https://github.com/TanStack/query/discussions/2468#discussioncomment-8983853">
+          🔗TanStack query Discussion
+        </Link>
+        <br />
+        <br />
+        refetch는 항상 리패치 하지만, invalidate는 좀 더 “smart” 하게 stale
+        상태로 mark하여 다음 observer mount 시에 리패치 하게끔 합니다. 이는 기본
+        옵션일 때의 동작이고, invalidate 메소드의 refetchType 속성을 이용하여
+        조정할 수 있습니다.
+        <br />
+        <br />
+        <Link href="https://github.com/TanStack/query/blob/2273105df980b3763747c101c301e213ed1df98b/packages/query-core/src/queryClient.ts#L279">
+          🔗코드 내부 구현
+        </Link>
+        을 살펴보자면, invalidate는 refetch의 추상화된 레벨임을 알 수 있습니다.
+        효율적으로 쿼리들을 invalidate하고, refetch 옵션에 따라 필요한 쿼리들을
+        refetch 합니다. 그렇기 때문에 tanstack-query의 메인테이너 Dominik
+        Dorfmeister는, refetch를 사용하지 않는다고도 이야기 합니다.
+        <br />
+        <br />
+        쿼리가 invalidate 되면 일어나는 과정에 대해 아래와 같이 ChatGPT 이용해
+        정리하며, 글을 마무리합니다.
+        <br />
+        &nbsp; &nbsp;1. <u>쿼리 상태 변경</u> :: 쿼리가 “invalidate“로 설정되면,
+        해당 쿼리의 `isStale` 상태가 `true`로 설정됩니다. 이는 쿼리 데이터가
+        최신이 아니며, 다음 접근 시 자동으로 데이터를 다시 가져와야 함을
+        의미합니다.
+        <br />
+        &nbsp; &nbsp;2. <u>캐시의 데이터 상태 변경</u> :: 내부적으로 쿼리
+        데이터가 있는 캐시 항목을 찾아 `stale` 상태로 마킹합니다. 이 마킹은 쿼리
+        키에 연결된 모든 캐시 항목에 적용될 수 있습니다.
+        <br />
+        &nbsp; &nbsp;3. <u>백그라운드에서의 자동 재요청</u> :: 쿼리가 활성화되어
+        있고, 자동 재패칭 설정이 활성화된 경우 (기본적으로 활성화되어 있음),
+        쿼리가 사용되는 컴포넌트가 마운트되어 있으면 백그라운드에서 즉시
+        데이터를 다시 패치합니다.
+        <br />
+        &nbsp; &nbsp;4. <u>사용자 인터페이스의 반응</u> :: 컴포넌트에서 이
+        쿼리를 사용하고 있다면, 쿼리가 다시 패칭되는 동안 로딩 상태가 표시될 수
+        있습니다. 이는 쿼리의 `isLoading` 또는 `isFetching` 상태가 `true`로
+        설정되어 있기 때문입니다.
+        <br />
+        &nbsp; &nbsp;5. <u>에러 핸들링</u> :: 새로운 패치 과정에서 오류가
+        발생하면, 쿼리의 `error` 상태가 업데이트되고, 관련된 컴포넌트에서 이를
+        감지하여 적절한 UI 반응을 보일 수 있습니다.
+      </div>
+    ),
+    pathUrl: "tanstack-query-invalidate-vs-refetch",
+    date: new Date("2024-07-06"),
+  },
+  {
     title: "Render Props Pattern (+ HOC Pattern)",
     content: (
       <div>

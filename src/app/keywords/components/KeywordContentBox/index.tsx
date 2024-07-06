@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React from "react";
 
 import Heading from "@/components/Heading";
 import Label from "@/components/Label";
