@@ -1,4 +1,4 @@
-import { style } from "@vanilla-extract/css";
+import { globalStyle, style } from "@vanilla-extract/css";
 
 import {
   MORE_DESKTOP_MEDIA_QUERY,
@@ -46,3 +46,7 @@ export const content = style({
     },
   },
 });
+
+globalStyle(`${content} a:hover`, {
+  textDecoration: 'underline overline'
+})
