@@ -36,6 +36,17 @@ const KEYWORDS = [
         <br />
         &nbsp; &nbsp;3. border나, fixed navigation bar와 같은 정밀한 픽셀 단위가
         필요할 수 있습니다. 그럴 때에는 신중하게 사용해야 합니다.
+        <br />
+        <br />
+        Ref ::
+        <br />
+        <Link href="https://bootcamp.uxdesign.cc/why-engineers-and-designers-should-use-rem-over-px-and-how-to-automate-the-css-migration-157870257cad">
+          🔗https://bootcamp.uxdesign.cc/why-engineers-and-designers-should-use-rem-over-px-and-how-to-automate-the-css-migration-157870257cad
+        </Link>
+        <br />
+        <Link href="https://www.seeratawan.me/blog/why-you-should-move-from-px-to-rem-in-css">
+          🔗https://www.seeratawan.me/blog/why-you-should-move-from-px-to-rem-in-css
+        </Link>
       </div>
     ),
     pathUrl: "rem-vs-px",
