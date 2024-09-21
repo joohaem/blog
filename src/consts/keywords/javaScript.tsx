@@ -2,6 +2,59 @@ import Link from "next/link";
 
 const KEYWORDS = [
   {
+    title: "import/no-cycle",
+    content: (
+      <div>
+        eslint-plugin-import 플러그인의 규칙 중{" "}
+        <Link href="https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-cycle.md#importno-cycle">
+          🔗<u>no-cycle</u>
+        </Link>
+        에 해당하는 규칙이 있습니다.
+        <br />
+        의존성 모듈에 의해 다시 path가 resolve 되지 않는가를 감지하는 린트
+        규칙입니다.
+        <br />
+        왜 해당 규칙이 필요할까요?
+        <br />
+        <br />
+        왜 순환되는 import는 안티 패턴이 되는지는 크게 아래 두 가지 이유가
+        있습니다.
+        <br />
+        &nbsp; &nbsp;1. <u>로드 순서에</u> 문제가 있습니다. A 모듈에서 B 모듈을
+        참조하고, B 모듈에서 A 모듈을 참조하게 되는 상황입니다. A 모듈에서 B
+        모듈을 참조하는 시점에 B 모듈이 (A 모듈을 참조하기 전이기 때문에) 완전한
+        로드 상태가 아닐 수 있습니다. undefined나 불완전한 객체 상태를
+        참조함으로써 올바른 동작을 보장할 수 없습니다. 특히, ES6 모듈
+        시스템에서는 로딩 순서를 정적으로 결정하기 때문에 문제가 두각됩니다.
+        <br />
+        &nbsp; &nbsp;2. <u>사이드 이펙트</u>에 쉽게 노출됩니다. A 모듈을
+        수정하면 B 모듈이 영향을 받고, 반대의 경우에도 마찬가지이기 때문에 동작
+        관리를 어렵게 합니다. 이는 디버깅이나 유지보수의 어려움을 야기합니다.
+        <br />
+        <br />
+        <u>Import Cycle</u>은 React 입문자에게 쉽게 드러나는 안티 패턴입니다.
+        <br />
+        가장 대표적으로는 B 컴포넌트를 정의하고, A라는 부모 컴포넌트에서 그에
+        필요한 상태와 타입을 정의하며, B 컴포넌트를 정의하는 모듈에서 A 모듈의
+        타입을 import 하는 상황 패턴입니다.
+        <br />
+        이를 린트 에러를 마주하며 의식적으로 역할에 따른 독립적인
+        타입/컴포넌트/객체/모듈/… 을 설계하는 방향의 연습이 필요합니다.
+        <br />
+        <br />
+        +
+        <br />
+        비슷한 개념으로는 Circular Reference; 순환 참조가 있습니다. A 객체의
+        프로퍼티가 B 객체를, B 객체의 프로퍼티가 A 객체를 참조하는 예시를 들 수
+        있죠.
+        <br />이 역시 메모리 누수나, 무한 루프 등의 문제점이 발생하기 때문에
+        안티 패턴으로 규정이 되는 개념임을 알 수 있습니다.
+      </div>
+    ),
+    pathUrl: "import-no-cycle",
+    date: new Date("2024-09-21"),
+  },
+  {
     title: "Option passive of Event Listener",
     content: (
       <div>
