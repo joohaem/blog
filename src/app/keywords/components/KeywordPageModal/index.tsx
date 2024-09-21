@@ -8,7 +8,7 @@ import Modal from "@/components/Modal";
 import Text from "@/components/Text";
 import type { Keyword } from "@/consts/keywords";
 
-import { container, content, divider, title } from "./index.css";
+import { container, content, date, divider, title } from "./index.css";
 
 interface KeywordProps {
   keyword: Keyword;
@@ -27,9 +27,12 @@ export default function KeywordPageModal({ keyword }: KeywordProps) {
       <Heading size="title-m" weight="medium" className={title}>
         {keyword?.title}
       </Heading>
-      <div className={divider}></div>
+      <div className={divider} />
       <Text size="s" className={content}>
         {keyword?.content}
+        <div className={date}>
+          Last Updated {keyword.date.toLocaleDateString("ko-KR")}
+        </div>
       </Text>
     </Modal>
   );

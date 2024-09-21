@@ -33,6 +33,11 @@ export const divider = style({
   backgroundColor: "rgba(1, 1, 1, 0.3)",
 });
 
+export const date = style({
+  color: "rgba(1, 1, 1, 0.5)",
+  marginTop: "20px",
+})
+
 export const content = style({
   height: "100%",
   overflowY: "auto",
