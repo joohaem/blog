@@ -34,3 +34,10 @@ export const inactiveTabOnBlack = style([
     },
   },
 ]);
+
+
+export const link = style({
+  height: '100%',
+  display: 'flex',
+  alignItems: 'center',
+})

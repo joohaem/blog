@@ -31,7 +31,7 @@ const Contact = () => {
         듣는 것을 즐겨합니다. 많은 소통을 환영하고 기대합니다.
         <br />
         <br />
-        연락을 주시면 기쁜 마음으로 회신 드리도록 하겠습니다-
+        연락 주시면 기쁜 마음으로 회신 드리도록 할게요.
         <br />
         <Link
           href="http://www.linkedin.com/in/%EC%A3%BC%ED%95%A8-%EC%9D%B4-ba292b215"

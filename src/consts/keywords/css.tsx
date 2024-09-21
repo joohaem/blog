@@ -2,6 +2,41 @@ import Link from "next/link";
 
 const KEYWORDS = [
   {
+    title: "Tips of Sticky",
+    content: (
+      <div>
+        1.
+        <br />
+        sticky 속성은 부모 요소가 scroll context로 작용할 때만 동작합니다.
+        <br />
+        즉, <u>부모 요소가 스크롤 가능해야 합니다.</u> overflow: auto, overflow:
+        scroll 또는 overflow: hidden 속성 중 하나를 가지고 있어야 하며, 부모
+        요소의 크기가 자식 요소보다 커야 합니다.
+        <br />
+        <br />
+        2.
+        <br />
+        부모 기준으로 길이가 stretch 된 요소에는 sticky가 적용되지 않습니다.
+        <br />
+        예를 들어 부모가 flex display를 갖고 있다면, align-self 속성을 조정하며
+        스크롤 가능한 높이값을 설정해주어야 합니다.
+        <br />
+        <br />
+        3.
+        <br />
+        <u>sticky 요소는 컨테이너 밖을 나오지 못합니다.</u>
+        <br />
+        부모의 컨테이너 내에서만 위치할 수 있고, 부모 중{" "}
+        <Link href="https://snupi.vercel.app/keywords/standard-for-containing-block-with-absolute-fixed-position">
+          🔗Scroll Container
+        </Link>
+        에 대해 sticky가 적용됩니다.
+      </div>
+    ),
+    pathUrl: "tips-of-sticky",
+    date: new Date("2024-09-21"),
+  },
+  {
     title: "rem vs px",
     content: (
       <div>
