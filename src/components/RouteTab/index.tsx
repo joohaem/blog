@@ -5,7 +5,13 @@ import { usePathname } from "next/navigation";
 
 import Label, { LabelProps } from "@/components/Label";
 
-import { inactiveTab, inactiveTabOnBlack, tab, tabOnBlack } from "./index.css";
+import {
+  inactiveTab,
+  inactiveTabOnBlack,
+  link,
+  tab,
+  tabOnBlack,
+} from "./index.css";
 
 export type RouteTab = {
   id: string;
@@ -39,7 +45,7 @@ const RouteTab = ({
   };
   return (
     <li className={getTabClassName()}>
-      <Link href={href}>
+      <Link href={href} className={link}>
         <Label size={size} {...props}>
           {text}
         </Label>
