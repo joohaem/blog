@@ -11,7 +11,7 @@ import {
   tabletKeywordsWrapper,
 } from "./index.css";
 
-// TODO :: Seperate
+// TODO :: Separate
 const keywords: Keyword[] = [];
 const keywordGroupByTwoLines: Record<"first" | "second", Keyword[]> = {
   first: [],
