@@ -2,6 +2,86 @@ import Link from "next/link";
 
 const KEYWORDS = [
   {
+    title: "from FileList to File[] type",
+    content: (
+      <div>
+        <u>{`<input type=”file” multiple />`}</u> 의 파일 값들은{" "}
+        <Link href="https://w3c.github.io/FileAPI/#filelist-section">
+          🔗<u>FileList</u>
+        </Link>
+        의 타입을 가집니다.
+        <br />
+        FileList는 {`Array<File>`} 타입이 아닙니다.
+        <br />
+        <br />
+        FileList 타입의 객체 <u>fileList</u>의 <u>{`fileList[0]`}</u> 객체는
+        File 타입의 객체이지만,
+        <br />
+        File 타입의 객체인 <u>file</u>의 <u>{`[file]`}</u> 배열은 FileList
+        타입이 될 수 없습니다.
+        <br />
+        {`//`} Property {`'item'`} is missing in type {`'File[]'`} but required
+        in type {`'FileList'`}.
+        <br />
+        <br />
+        FileList는 유사 배열 객체{`(Array-like Object)`}입니다.
+        <br />
+        유사 배열 객체는 타입으로 표현하면,{" "}
+        <u>{`{ [key: number]: any, length: number }`}</u> 의 객체를 말합니다.
+        <br />
+        반면, 배열을 구별하는 알고리즘(<u>{`Array.isArray()`}</u> 메서드)은{" "}
+        <Link href="https://tc39.es/ecma262/multipage/abstract-operations.html#sec-isarray">
+          🔗<u>ECMAScript 명세서</u>
+        </Link>
+        에 잘 소개되어 있습니다. 객체이여야 하고, 특정 조건에 맞는 객체여야
+        한다. 배열 객체에 대해 <u>Array Exotic Objects</u>임에 대한 분기가
+        소개되는데, 이것이 중요해 보입니다.
+        <br />
+        <Link href="https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#array-exotic-object">
+          🔗<u>Array Exotic Objects</u>
+        </Link>
+        는 유사 배열 객체와 달리 다음과 같은 특징을 추가적으로 지닙니다.
+        <br />
+        &nbsp; &nbsp;1. Array.prototype을 상속 받습니다.
+        <br />
+        &nbsp; &nbsp;2. <u>{`[[DefineOwnProperty]]`}</u>, <u>{`[[Get]]`}</u>,{" "}
+        <u>{`[[Set]]`}</u> 등 내부 메서드들을 포함합니다.{" "}
+        {`(이를 통해 요소를 업데이트 할 때, length 프로퍼티도 함께 업데이트 됩니다.)`}
+        <br />
+        &nbsp; &nbsp;3. 이외에 map과 같은 배열 객체의 외부 메서드들을
+        내장합니다.
+        <br />
+        <br />
+        그렇다면, {`Array<File>`} 타입의 배열을 선언하기 위해서는{" "}
+        <u>{`[…arrayListObject]`}</u> 를 선언하면 될까요?
+        <br />안 됩니다. <u>arrayListObject</u>가 iterable 하지 않다는 타입
+        에러를 내면서 말이죠. {`(`}유사 배열 객체인 FileList 타입에는{" "}
+        <Link href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Iteration_protocols#%EC%88%9C%ED%9A%8C_%EA%B0%80%EB%8A%A5_%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C">
+          🔗<u>iterable 프로토콜</u>
+        </Link>
+        {`(Symbol.iterator)`}이 존재하지 않습니다. 그러나 일반적인 배열에서는
+        존재하죠. 이 역시 유사 배열 객체와의 차이점입니다.{`)`}
+        <br />
+        이를 해결하기 위해서는, for 루프를 사용하거나, Array.prototype 메서드를
+        사용하여 유사 배열 객체로 배열과 같은 메소드를 사용할 수 있습니다. 또는{" "}
+        <u>{`Array.from(fileList)`}</u>와 같이 형 변환을 시도할 수도 있습니다.
+        <br />
+        하지만 대부분의 경우 이를 저희가 신경쓰지 않아도 됩니다. 최신 브라우저인{" "}
+        {`ES6(ECMAScript 2015)`}에서 Symbol.iterator가 도입되었기 때문에, 우리가
+        흔히 사용하는 FileList, NodeList, HTMLCollection 등이 iterable 하게
+        지원되었습니다. Node는 v12부터 Buffer, Stream 객체가 iterable 하게
+        지원되었다고 합니다.
+        <br />
+        따라서 우리는 안정된 환경에서 FileList 타입의 객체 <u>
+          fileList
+        </u>의 <u>{`[…fileList]`}</u>로 {`Array<File>`} 타입의 배열을 선언할 수
+        있습니다.
+      </div>
+    ),
+    pathUrl: "from-file-list-to-file-array-type",
+    date: new Date("2024-11-09"),
+  },
+  {
     title: "import/no-cycle",
     content: (
       <div>
