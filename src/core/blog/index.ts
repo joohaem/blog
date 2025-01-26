@@ -1,4 +1,5 @@
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { notFound } from "next/navigation";
 
 import { SOURCE_DATABASE } from "@/consts/env";
 import { propertyResolver } from "@/core/notion/property";
@@ -37,7 +38,9 @@ export async function getArticleByUrlPath(urlPath: string) {
   const articles = await getArticles();
   const article = articles.find((article) => article.urlPath === urlPath);
 
-  if (!article) throw new Error("Invalid URL article Path");
+  if (!article) {
+    notFound();
+  };
 
   return getArticleById(article.id);
 }

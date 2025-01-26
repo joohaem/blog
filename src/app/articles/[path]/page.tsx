@@ -1,4 +1,4 @@
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 import ArticlePage from "@/components/ArticlePage";
 import Comments from "@/components/Comments";
@@ -19,10 +19,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata(
-  { params }: ArticleProps,
-  _parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: ArticleProps): Promise<Metadata> {
   const id = params.path;
   const article = await getArticleByUrlPath(id);
 
