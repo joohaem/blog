@@ -1,4 +1,5 @@
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import React from "react";
 
 import { KEYWORDS } from "@/consts/keywords";
@@ -17,15 +18,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata(
-  { params }: KeywordProps,
-  _parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: KeywordProps): Promise<Metadata> {
   const pathUrl = params.path;
   const keyword = KEYWORDS.find((keyword) => keyword.pathUrl === pathUrl);
 
   if (!keyword) {
-    throw new Error("Invalid keyword url.");
+    notFound();
   }
 
   return {
@@ -65,7 +65,7 @@ export default function Keyword({ params: { path } }: KeywordProps) {
   const keyword = KEYWORDS.find((keyword) => keyword.pathUrl === path);
 
   if (!keyword) {
-    throw new Error("Invalid keyword url.");
+    notFound();
   }
 
   return <KeywordPageModal keyword={keyword} />;

@@ -4,7 +4,7 @@ const KEYWORDS = [
   {
     title: "Tips of Sticky",
     content: (
-      <div>
+      <p>
         1.
         <br />
         sticky 속성은 부모 요소가 scroll context로 작용할 때만 동작합니다.
@@ -31,7 +31,7 @@ const KEYWORDS = [
           🔗Scroll Container
         </Link>
         에 대해 sticky가 적용됩니다.
-      </div>
+      </p>
     ),
     pathUrl: "tips-of-sticky",
     date: new Date("2024-09-21"),
@@ -39,7 +39,7 @@ const KEYWORDS = [
   {
     title: "rem vs px",
     content: (
-      <div>
+      <p>
         <u>rem</u>의 단위는 글꼴 크기를 지정하는 데에 사용되는 상대 단위로,{" "}
         <u>‘root em’</u>의 약자입니다.
         <br />
@@ -82,7 +82,7 @@ const KEYWORDS = [
         <Link href="https://www.seeratawan.me/blog/why-you-should-move-from-px-to-rem-in-css">
           🔗https://www.seeratawan.me/blog/why-you-should-move-from-px-to-rem-in-css
         </Link>
-      </div>
+      </p>
     ),
     pathUrl: "rem-vs-px",
     date: new Date("2024-08-17"),
@@ -90,7 +90,7 @@ const KEYWORDS = [
   {
     title: "Prevent pointer-events by position",
     content: (
-      <div>
+      <p>
         Absolute로 위치가 고정된 요소는 일반적으로 다른 요소들 위에 떠 있기
         때문에 클릭 이벤트를 가로챌 수 있습니다. 해결책으로는 다음과 같은 것들이
         있을 수 있습니다:
@@ -120,7 +120,7 @@ const KEYWORDS = [
         배치하지만 스크롤되는 컨테이너의 뷰포트 상단이나 하단에 도달하면
         상대적으로 고정됩니다. 따라서 일부 상황에서는 마우스 이벤트를 가로챌 수
         있습니다.
-      </div>
+      </p>
     ),
     pathUrl: "prevent-pointer-events-by-position",
     date: new Date("2024-03-21"),
@@ -128,7 +128,7 @@ const KEYWORDS = [
   {
     title: "Flexbox Height issue on Safari",
     content: (
-      <div>
+      <p>
         Safari Browser에서의 css flex box는 부모 요소에서 상속된 높이가 제대로
         계산되지 않는 문제가 있습니다. 이는 Safari Browser에서 계산 방식이
         차이가 있기 때문입니다.
@@ -188,7 +188,7 @@ const KEYWORDS = [
         <Link href="https://stackoverflow.com/questions/33636796/chrome-safari-not-filling-100-height-of-flex-parent">
           🔗https://stackoverflow.com/questions/33636796/chrome-safari-not-filling-100-height-of-flex-parent
         </Link>
-      </div>
+      </p>
     ),
     pathUrl: "flex-box-height-issue-on-safari",
     date: new Date("2024-03-20"),
@@ -196,7 +196,7 @@ const KEYWORDS = [
   {
     title: "Standard for Containing Block with absolute, fixed position",
     content: (
-      <div>
+      <p>
         position 값이 relative, static 인 경우에는 일반적인 문서 흐름에 따라
         배치합니다.
         <br />
@@ -242,7 +242,7 @@ const KEYWORDS = [
         <Link href="https://developer.mozilla.org/ko/docs/Web/CSS/Containing_block">
           🔗https://developer.mozilla.org/ko/docs/Web/CSS/Containing_block
         </Link>
-      </div>
+      </p>
     ),
     pathUrl: "standard-for-containing-block-with-absolute-fixed-position",
     date: new Date("2024-03-06"),
@@ -250,7 +250,7 @@ const KEYWORDS = [
   {
     title: "min-* property in Flexbox",
     content: (
-      <div>
+      <p>
         flex box 내의 요소들에 있어서 flex (flex-grow, flex-shrink, flex-basis)
         속성으로써 유연하게 차지하는 공간을 제어할 수 있습니다.
         <br />
@@ -270,7 +270,7 @@ const KEYWORDS = [
         min-height: 0;
         <br />
         ```
-      </div>
+      </p>
     ),
     pathUrl: "min-property-in-flexbox",
     date: new Date("2024-02-29"),
@@ -278,7 +278,7 @@ const KEYWORDS = [
   {
     title: "100vw",
     content: (
-      <div>
+      <p>
         디바이스 전체 너비를 표현하기 위해 주로 100vw css 속성을 사용하곤 한다.
         <br />
         페이지단에 max-width가 설정되어 있는 Container 컴포넌트를 사용하더라도,
@@ -315,7 +315,7 @@ const KEYWORDS = [
         <br />
         html, css의 동작 flow에 맞게끔 Section, Conatiner 컴포넌트를 구성하는
         것이 가장 바람직한 스타일링 방법이 될 수 있습니다.
-      </div>
+      </p>
     ),
     pathUrl: "100vw",
     date: new Date("2023-11-07"),

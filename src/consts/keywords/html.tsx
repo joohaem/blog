@@ -1,10 +1,8 @@
-import Link from "next/link";
-
 const KEYWORDS = [
   {
     title: "<br>",
     content: (
-      <div>
+      <p>
         다양한 브라우저에서 호환은 가능하다.
         <br />
         단지 “줄바꿈”의 의미이며, empty element이다. (그래서 닫는 태그 x)
@@ -22,7 +20,7 @@ const KEYWORDS = [
         그러나 br 태그도, 그러한 상황도 매우 특수한 case이다.
         <br />
         대부분은 css block으로써 줄바꿈을 해결한다.
-      </div>
+      </p>
     ),
     pathUrl: "html-br",
     date: new Date("2023-09-20"),

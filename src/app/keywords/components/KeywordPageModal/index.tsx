@@ -30,9 +30,9 @@ export default function KeywordPageModal({ keyword }: KeywordProps) {
       <div className={divider} />
       <Text size="s" className={content}>
         {keyword?.content}
-        <div className={date}>
+        <p className={date}>
           Last Updated {keyword.date.toLocaleDateString("ko-KR")}
-        </div>
+        </p>
       </Text>
     </Modal>
   );

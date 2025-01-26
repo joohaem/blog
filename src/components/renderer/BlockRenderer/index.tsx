@@ -81,9 +81,9 @@ function BlockResolver({
       const type = block.type;
       const content = block[type as never];
       return (
-        <div style={{ whiteSpace: "pre-wrap" }}>
+        <p style={{ whiteSpace: "pre-wrap" }}>
           Unknown {type}: {JSON.stringify(content, null, 2)}
-        </div>
+        </p>
       );
   }
 }

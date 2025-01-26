@@ -4,7 +4,7 @@ const KEYWORDS = [
   {
     title: "from FileList to File[] type",
     content: (
-      <div>
+      <p>
         <u>{`<input type=”file” multiple />`}</u> 의 파일 값들은{" "}
         <Link href="https://w3c.github.io/FileAPI/#filelist-section">
           🔗<u>FileList</u>
@@ -76,7 +76,7 @@ const KEYWORDS = [
           fileList
         </u>의 <u>{`[…fileList]`}</u>로 {`Array<File>`} 타입의 배열을 선언할 수
         있습니다.
-      </div>
+      </p>
     ),
     pathUrl: "from-file-list-to-file-array-type",
     date: new Date("2024-11-09"),
@@ -84,7 +84,7 @@ const KEYWORDS = [
   {
     title: "import/no-cycle",
     content: (
-      <div>
+      <p>
         eslint-plugin-import 플러그인의 규칙 중{" "}
         <Link href="https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-cycle.md#importno-cycle">
           🔗<u>no-cycle</u>
@@ -129,7 +129,7 @@ const KEYWORDS = [
         있죠.
         <br />이 역시 메모리 누수나, 무한 루프 등의 문제점이 발생하기 때문에
         안티 패턴으로 규정이 되는 개념임을 알 수 있습니다.
-      </div>
+      </p>
     ),
     pathUrl: "import-no-cycle",
     date: new Date("2024-09-21"),
@@ -137,7 +137,7 @@ const KEYWORDS = [
   {
     title: "Option passive of Event Listener",
     content: (
-      <div>
+      <p>
         Event interface 중 <u>preventDefault()</u> 메서드가 있습니다. 이를 통해
         이벤트에서 User의 기본 동작을 실행하지 않도록 지정할 수 있습니다. 추가
         설정으로 이벤트를 핸들링 하는 더 다양한 요구사항을 만족할 수 있습니다.
@@ -160,7 +160,7 @@ const KEYWORDS = [
         <br />
         이렇게 되면 브라우저는 JavaScript를 기다리지 않고 즉시 스크롤에 응답하여
         User에게 더 안정적이고 smooth한 경험을 제공할 수 있습니다.
-      </div>
+      </p>
     ),
     pathUrl: "passive-option-of-event-listener",
     date: new Date("2024-03-11"),
@@ -168,7 +168,7 @@ const KEYWORDS = [
   {
     title: "Getter, Setter pattern",
     content: (
-      <div>
+      <p>
         class와 같이 데이터를 저장하는 전용 데이터 객체에 대해, Getter, Setter가
         반드시 있어야 하는 것은 아닙니다. 일반적으로 public, 접근자, mitator를
         제공한다면 코드를 사용하는 모든 사람에게 구현이 노출되어 캡슐화가
@@ -201,7 +201,7 @@ const KEYWORDS = [
         <Link href="https://www.quora.com/Why-are-getters-and-setters-increasingly-considered-an-anti-pattern-in-programming-circles">
           🔗https://www.quora.com/Why-are-getters-and-setters-increasingly-considered-an-anti-pattern-in-programming-circles
         </Link>
-      </div>
+      </p>
     ),
     pathUrl: "getter-setter-pattern",
     date: new Date("2023-12-12"),

@@ -4,29 +4,50 @@ const KEYWORDS = [
   {
     title: "Scroll State on Navigate Page (Next.js scroll option)",
     content: (
-      <div>
-        a 태그를 클릭하여 <u>페이지를 이동</u>하게 된다면, 새로운 페이지로 <u>{'load'} 이벤트</u>가 발생하게 됩니다.
-        <br />
-        이 때에 <u>x, y축의 스크롤 정보</u>는 0으로 <u>초기화</u> 되게끔 기본적으로 동작합니다.
-        <br />
-        <br />
-        혹은 Next.js의 {"<Link />"} 컴포넌트의 onClick 으로 새로운 페이지로 이동할 때에도 스크롤 정보가 초기화 되는 것을 알 수 있습니다. 이는 <Link href="https://github.dev/vercel/next.js">🔗Next.js 내부 구현(/lib/router/router.ts)</Link>을 참고해보았을 때, Next.js 내에서 scroll 정보를 초기화 하여 기본 동작을 구현해낸 것을 알 수 있습니다.
+      <p>
+        a 태그를 클릭하여 <u>페이지를 이동</u>하게 된다면, 새로운 페이지로{" "}
+        <u>{"load"} 이벤트</u>가 발생하게 됩니다.
+        <br />이 때에 <u>x, y축의 스크롤 정보</u>는 0으로 <u>초기화</u> 되게끔
+        기본적으로 동작합니다.
         <br />
         <br />
-        때론 페이지를 이동할 때에 스크롤 정보를 초기화하고 싶지 않은 경우도 있습니다. 이런 니즈를 위해 Next.js에서는 <Link href="https://nextjs.org/docs/pages/api-reference/components/link#scroll-1">🔗scroll 옵션</Link>을 제공합니다.
+        혹은 Next.js의 {"<Link />"} 컴포넌트의 onClick 으로 새로운 페이지로
+        이동할 때에도 스크롤 정보가 초기화 되는 것을 알 수 있습니다. 이는{" "}
+        <Link href="https://github.dev/vercel/next.js">
+          🔗Next.js 내부 구현(/lib/router/router.ts)
+        </Link>
+        을 참고해보았을 때, Next.js 내에서 scroll 정보를 초기화 하여 기본 동작을
+        구현해낸 것을 알 수 있습니다.
         <br />
-        그렇다면 기본 Web 환경에서는 이를 어떻게 처리할 수 있을까요? Next.js에서는 어떻게 처리하는 걸까요?
+        <br />
+        때론 페이지를 이동할 때에 스크롤 정보를 초기화하고 싶지 않은 경우도
+        있습니다. 이런 니즈를 위해 Next.js에서는{" "}
+        <Link href="https://nextjs.org/docs/pages/api-reference/components/link#scroll-1">
+          🔗scroll 옵션
+        </Link>
+        을 제공합니다.
+        <br />
+        그렇다면 기본 Web 환경에서는 이를 어떻게 처리할 수 있을까요?
+        Next.js에서는 어떻게 처리하는 걸까요?
         <br />
         |
         <br />
-        간단합니다. <u>history 객체의 scrollRestoration 값</u>을 조작하고, a 태그를 클릭할 때의 스크롤 정보를 저장한 후에 페이지를 이동할 때에 스크롤 정보를 변경시켜주는 것입니다.
+        간단합니다. <u>history 객체의 scrollRestoration 값</u>을 조작하고, a
+        태그를 클릭할 때의 스크롤 정보를 저장한 후에 페이지를 이동할 때에 스크롤
+        정보를 변경시켜주는 것입니다.
         <br />
-        &nbsp;&nbsp;1. <Link href="https://developer.mozilla.org/ko/docs/Web/API/History/scrollRestoration">🔗history.scrollRestoration</Link> 정보를 ‘manual’ 값으로 변경합니다.
+        &nbsp;&nbsp;1.{" "}
+        <Link href="https://developer.mozilla.org/ko/docs/Web/API/History/scrollRestoration">
+          🔗history.scrollRestoration
+        </Link>{" "}
+        정보를 ‘manual’ 값으로 변경합니다.
         <br />
-        &nbsp;&nbsp;2. scroll 정보인 <u>window.scrollY 정보</u>를 sessionStorage에 저장합니다.
+        &nbsp;&nbsp;2. scroll 정보인 <u>window.scrollY 정보</u>를
+        sessionStorage에 저장합니다.
         <br />
-        &nbsp;&nbsp;3. load 이벤트 리스너에 해당 정보를 scrollTo로 조작하는 함수를 선언한다. (+ sessionStorage 값을 초기화 합니다.)
-      </div>
+        &nbsp;&nbsp;3. load 이벤트 리스너에 해당 정보를 scrollTo로 조작하는
+        함수를 선언한다. (+ sessionStorage 값을 초기화 합니다.)
+      </p>
     ),
     pathUrl: "scroll-state-on-navigate-page",
     date: new Date("2024-06-06"),
@@ -34,7 +55,7 @@ const KEYWORDS = [
   {
     title: "Google page Indexing",
     content: (
-      <div>
+      <p>
         <u>Page Indexing</u>
         <br />
         크롤러는 대량의 인덱스(페이지 위치와 모든 단어들)를 모아 정리하는 작업을
@@ -146,7 +167,7 @@ const KEYWORDS = [
         <Link href="https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links?hl=ko">
           🔗nofollow example
         </Link>
-      </div>
+      </p>
     ),
     pathUrl: "google-page-indexing",
     date: new Date("2023-10-09"),

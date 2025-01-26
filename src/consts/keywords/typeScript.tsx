@@ -4,7 +4,7 @@ const KEYWORDS = [
   {
     title: "keyof type",
     content: (
-      <div>
+      <p>
         keyof 연산자는 object 타입을 받아 key 값들에 대한 string 이나 numeric
         literal의 union을 제공합니다.
         <br />
@@ -88,7 +88,7 @@ const KEYWORDS = [
         <Link href="https://www.typescriptlang.org/docs/handbook/literal-types.html#numeric-literal-types">
           🔗https://www.typescriptlang.org/docs/handbook/literal-types.html#numeric-literal-types
         </Link>
-      </div>
+      </p>
     ),
     pathUrl: "keyof-type",
     date: new Date("2024-01-13"),
