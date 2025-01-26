@@ -18,7 +18,7 @@ const Quote: FC<QuoteProps> = ({ block }) => {
         <div className={container}>
           <div className={quoteIconWrapper}>{quoteIcon}</div>
           <Text size="m" className={text}>
-            {children}
+            <p>{children}</p>
           </Text>
         </div>
       )}

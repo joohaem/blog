@@ -16,7 +16,9 @@ const Callout: FC<CalloutProps> = ({ block }) => {
       richText={block.callout.rich_text}
       render={(children) => (
         <div className={container}>
-          <Text>{children}</Text>
+          <Text>
+            <p>{children}</p>
+          </Text>
         </div>
       )}
     />

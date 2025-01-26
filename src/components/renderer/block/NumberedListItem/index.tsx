@@ -27,7 +27,9 @@ const NumberedListItem = async ({ block, num }: NumberedListItemProps) => {
         <div className={container}>
           <Text className={number}>{num}.</Text>
           <div className={bodyContainer}>
-            <Text>{text}</Text>
+            <Text>
+              <p>{text}</p>
+            </Text>
             {children}
           </div>
         </div>
