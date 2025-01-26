@@ -4,7 +4,7 @@ const KEYWORDS = [
   {
     title: "TanStack query, invalidate vs refetch",
     content: (
-      <div>
+      <p>
         <Link href="https://github.com/TanStack/query/discussions/2468#discussioncomment-8983853">
           🔗TanStack query Discussion
         </Link>
@@ -50,7 +50,7 @@ const KEYWORDS = [
         &nbsp; &nbsp;5. <u>에러 핸들링</u> :: 새로운 패치 과정에서 오류가
         발생하면, 쿼리의 `error` 상태가 업데이트되고, 관련된 컴포넌트에서 이를
         감지하여 적절한 UI 반응을 보일 수 있습니다.
-      </div>
+      </p>
     ),
     pathUrl: "tanstack-query-invalidate-vs-refetch",
     date: new Date("2024-07-06"),
@@ -58,7 +58,7 @@ const KEYWORDS = [
   {
     title: "Render Props Pattern (+ HOC Pattern)",
     content: (
-      <div>
+      <p>
         - <u>HOC</u> :: 여러 컴포넌트가 <u>동일한 데이터에 액세스</u>해야 하거나{" "}
         <u>동일한 로직</u>을 포함할 때 컴포넌트 로직을 재사용할 수 있으면 매우
         편리하다. (Using the HOC pattern, it`s easy to end up with a deeply
@@ -105,7 +105,7 @@ const KEYWORDS = [
           이펙트(state 변화로 인한 리렌더링 등)를 주지 않게 state를 주입하는 데
         </u>
         에 유용한 패턴이라고 정리할 수 있다.
-      </div>
+      </p>
     ),
     pathUrl: "render-props-pattern",
     date: new Date("2023-10-09"),

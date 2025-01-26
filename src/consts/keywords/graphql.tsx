@@ -1,14 +1,12 @@
-import Link from "next/link";
-
 const KEYWORDS = [
   {
     title: "graphql ...spread",
     content: (
-      <div>
+      <p>
         It`s a powerful way to structure your queries efficiently and retrieve
         only the data relevant to the specific types. (Using with Interfaces(1),
         Unions(2), Fragments(3))
-      </div>
+      </p>
     ),
     pathUrl: "graphql-spread",
     date: new Date("2023-10-20"),
@@ -16,7 +14,7 @@ const KEYWORDS = [
   {
     title: "Login logic (GraphQL? REST API?)",
     content: (
-      <div>
+      <p>
         데이터 자원 자체를 주고 받는 로그인 로직은, gql 보다 rest 가 더
         적합하다.
         <br />
@@ -35,7 +33,7 @@ const KEYWORDS = [
         <br />
         하지만 이는 프론트에 종속된 로직이기 때문에, 프론트 서버에서 조작하여
         REST 통신을 하게 되면 알맞은 계층 분리가 된다.
-      </div>
+      </p>
     ),
     pathUrl: "login-logic",
     date: new Date("2023-10-09"),
