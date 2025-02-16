@@ -2,6 +2,87 @@ import Link from "next/link";
 
 const KEYWORDS = [
   {
+    title: "Touch and Virtual Mouse Event",
+    content: (
+      <p>
+        웹 페이지에서의 클릭을 click 이벤트로써 쉽게 제어할 수 있습니다.
+        <br />
+        또한, 온리 원 포인터를 사용하는 mousedown, mouseup과 같은 마우스
+        이벤트로써 세밀한 마우스 조작을 제어합니다.
+        <br />
+        하지만 터치 환경을 고려해야 하는 모바일 환경에서는 조금 더 고민해야 할
+        것이 생깁니다.
+        <br />
+        touchstart, touchend와 같은 터치 관련한 이벤트들이 추가되기 때문입니다.
+        <br />
+        게다가, 터치를 할 때에 우리는 터치 이벤트 뿐만 아니라 mouse 이벤트와
+        click 이벤트까지 발생하는 것을 확인할 수 있습니다. (이를 가상 마우스
+        이벤트라고 부릅니다.)
+        <br />
+        ✔️ 터치: touchstart → touchend → mousemove → mousedown → mouseup →
+        click(300ms 딜레이)
+        <br />
+        <br />
+        그렇기 때문에 클릭을 배제하고 터치만의 사용성을 개발할 때 괴리가 생길 수
+        있습니다. 예를 들어, A 버튼 위에 B 팝업이 있다고 가정해봅시다. B 팝업을
+        touchstart 이벤트를 통해 닫는 로직을 추가했다면, B 팝업이 닫히고 뒤이어
+        click 이벤트가 발생하며 A 버튼이 함께 눌리는 문제 상황이 발생할 수
+        있습니다.
+        <br />
+        <br />
+        이를 해결하기 위한 방법은 간단합니다.
+        <br />
+        1️⃣ B 팝업을 터치 할 때에 click 이벤트까지 불리지 않게 합니다.
+        <br />
+        touchend 이벤트에 대해 <u>event.preventDefault();</u> 를 선언합니다.
+        이는 가상 마우스 이벤트 생성을 방지합니다.
+        <br />이 때, touchstart 이벤트에 대해 선언하기 위해서는{" "}
+        <u>passive: false</u> 의 추가 제어가 필요합니다.
+        <br />
+        하지만 이는 성능에 영향이 있을 수 있기 때문에 touchend 이벤트로의 변경을
+        권합니다.
+        <br />
+        기본적으로 touchstart, touchmove 이벤트에 대해서는 <u>
+          passive
+        </u> 옵션이 <u>true</u>로 설정되어, <u>preventDefault()</u> 를 호출해도
+        콘솔 경고만 출력할 뿐 제대로 동작하지 않게 되어 있습니다.
+        <br />
+        <Link
+          href={
+            "https://snupi.vercel.app/keywords/passive-option-of-event-listener"
+          }
+        >
+          🔗<u>passive 옵션</u>
+        </Link>
+        에 대해서는 또 다른 KEYWORD 글이 있으니 참고하시길 바랍니다.
+        <br />
+        <br />
+        2️⃣ A 버튼에 터치 이벤트를 차단합니다.
+        <br />
+        <u>touch-action: none;</u>
+        <br />
+        CSS의 <u>touch-action</u> 속성을 <u>none</u>으로 설정하면, 터치 제스처에
+        의한 기본 동작(예: 스크롤, 확대 등)을 비활성화할 수 있으며, 간접적으로
+        가상 마우스 이벤트 생성을 방지할 수 있습니다.
+        <br />
+        <br />
+        이와 같이 터치와 클릭에 대해 함께 조작하는 것에 대해 한 가지 고려할 것에
+        대해 짚어봅니다.
+        <br />
+        사용자와의 상호작용에서 가장 기본적이지만 어려운 부분이라 생각됩니다.
+        그렇기에 특징에 대해 명확히 구분해서 올바르게 사용하는 것이 중요하겠다
+        싶습니다.
+        <br />
+        ref ::{" "}
+        <Link href="https://ui.toast.com/posts/ko_20220106">
+          🔗<u>터치와 클릭, 우리 깐부잖아.</u>
+        </Link>
+      </p>
+    ),
+    pathUrl: "touch-and-virtual-mouse-event",
+    date: new Date("2025-02-16"),
+  },
+  {
     title: "from FileList to File[] type",
     content: (
       <p>
