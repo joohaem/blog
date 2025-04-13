@@ -1,5 +1,6 @@
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/next";
 import clsx from "clsx";
 import type { Metadata } from "next";
 import { Nanum_Myeongjo } from "next/font/google";
@@ -93,6 +94,7 @@ export default function RootLayout({
       <body className={bodyContainer}>
         {children}
         <div id="portal-root"></div>
+        <Analytics />
       </body>
     </html>
   );
