@@ -32,5 +32,8 @@
     "eslint-config-next": "14.0.4",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=22.0.0"
   }
 }

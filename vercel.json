@@ -1,0 +1,8 @@
+{
+  "functions": {
+    "src/app/api/**/*.js": {
+      "runtime": "nodejs22.x"
+    }
+  },
+  "buildCommand": "npm run build"
+}
