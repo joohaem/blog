@@ -2,6 +2,57 @@ import Link from "next/link";
 
 const KEYWORDS = [
   {
+    title: "Parse, don’t validate",
+    content: (
+      <p>
+        (
+        <Link href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate">
+          🔗{`Parse, don't validate`}{" "}
+        </Link>
+        개념을 소화하는 글입니다.)
+        <br />
+        <br />
+        특정 동작을 수행하는 <u>processX(x: T)</u> 함수가 있을 때,
+        <br />
+        함수 전에 T 타입의 x 인자를 올바른지 검증하기 위해{" "}
+        <u>validateX(x: unknown): void</u> 함수를 사용할 수 있습니다.
+        <br />
+        하지만 validate 함수를 사용하는 코드를 상상해보면, 다음과 같은 문제가
+        있음을 알 수 있습니다.
+        <br />
+        &nbsp;&nbsp;- 로직 내에서 if 문의 무분별한 검증이 일어나게 됩니다. 이
+        때문에 자연스레 코드의 복잡도는 올라갑니다.
+        <br />
+        &nbsp;&nbsp;- processX 함수 내에서 validateX 함수로 검증이 안될 경우,
+        nullable 한 값(undefined)을 리턴합니다. 이는 코드 바깥의 세상을 nullable
+        한 값으로 오염시킵니다. (validateX 함수에서 에러를 던지더라도, 같은
+        타입의 processX 함수의 인자로 한 번 더 검증이 필요하게 됩니다.)
+        <br />
+        <br />
+        위 문제를 해결하기 위해, “validate” 대신 “parse”의 개념을 이용할 수
+        있습니다.
+        <br />
+        <u>parseX(x: T): V</u> 함수를 이용합니다. 해당 함수에서만 검증이
+        일어나고, 검증이 완료된다면 V 타입의 객체로 변환하여 “검증된 타입”임을
+        명시합니다.
+        <br />
+        (구체적으로 V타입의 객체는, <u>{`{ readonly __brand: 'ParsedX' }`}</u>와
+        같은 Branded type이나 class를 상속하여 사용할 수 있습니다. 혹은
+        TypeScript를 이용하여 컴파일 단계에서 검증이 가능한{" "}
+        <u>{"ParsedX<T>"}</u>와 같은 타입으로 단언하여 사용하는 방법도
+        있습니다.)
+        <br />
+        parseX 함수를 앞서 호출하여 정의역의 범위를 좁혀놓는다면,{" "}
+        <u>processX(x: V): void</u> 로써, 전함수의 역할을 다할 수 있습니다.
+        <br />
+        이로써 무분별한 if 문을 제거할 수 있고, V 타입의 객체로써 안전 범위를
+        손쉽게 확인할 수 있습니다.
+      </p>
+    ),
+    pathUrl: "parse-don-t-validate",
+    date: new Date("2025-10-12"),
+  },
+  {
     title: "Scroll State on Navigate Page (Next.js scroll option)",
     content: (
       <p>
@@ -174,7 +225,7 @@ const KEYWORDS = [
   },
 ].map((keyword) => ({
   ...keyword,
-  category: "Web" as const,
+  category: "Dev" as const,
 }));
 
 export { KEYWORDS };
