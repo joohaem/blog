@@ -3,7 +3,14 @@ import Link from "next/link";
 
 import Text from "@/components/Text";
 
-import { containerRoot, image, imageWrapper, text, textLink } from "./page.css";
+import {
+  containerRoot,
+  dateText,
+  image,
+  imageWrapper,
+  text,
+  textLink,
+} from "../styles/common.css";
 
 const Contact = () => {
   return (
@@ -43,6 +50,9 @@ const Contact = () => {
         <Link href="mailto:joohaem@daum.net" className={textLink}>
           🔗 Sending Email
         </Link>
+        <br />
+        <br />
+        <div className={dateText}>Last Updated 2024.02.12.</div>
       </Text>
     </div>
   );

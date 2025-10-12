@@ -3,7 +3,14 @@ import Link from "next/link";
 
 import Text from "@/components/Text";
 
-import { containerRoot, image, imageWrapper, text, textLink } from "./page.css";
+import {
+  containerRoot,
+  dateText,
+  image,
+  imageWrapper,
+  text,
+  textLink,
+} from "../styles/common.css";
 
 const Engineering = () => {
   return (
@@ -57,6 +64,9 @@ const Engineering = () => {
           🔗 서번트 리더의 역할로 팀원들과 함께 성장했던 경험
         </Link>
         이 있습니다.
+        <br />
+        <br />
+        <div className={dateText}>Last Updated 2024.02.12.</div>
       </Text>
     </div>
   );
