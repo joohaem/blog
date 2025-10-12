@@ -2,7 +2,13 @@ import Image from "next/image";
 
 import Text from "@/components/Text";
 
-import { containerRoot, image, imageWrapper, text } from "./page.css";
+import {
+  containerRoot,
+  dateText,
+  image,
+  imageWrapper,
+  text,
+} from "../styles/common.css";
 
 const Blog = () => {
   return (
@@ -33,6 +39,9 @@ const Blog = () => {
         자기계발을 위해 망각의 곡선을 극복하기 위한 조각글들을 모아두고 싶다는
         생각도 합니다. 그래서 저는 아티클 공간과 키워드 공간을 나누어
         구성하였습니다.
+        <br />
+        <br />
+        <div className={dateText}>Last Updated 2024.02.12.</div>
       </Text>
     </div>
   );

@@ -36,6 +36,18 @@ export const text = style({
   textAlign: "justify",
 });
 
+export const dateText = style({
+  color: 'grey'
+});
+
 export const image = style({
   objectFit: "cover",
+});
+
+export const textLink = style({
+  textDecoration: "#6d6875 wavy underline",
+
+  ":hover": {
+    fontWeight: "500",
+  },
 });

@@ -3,7 +3,14 @@ import Link from "next/link";
 
 import Text from "@/components/Text";
 
-import { containerRoot, image, imageWrapper, text, textLink } from "./page.css";
+import {
+  containerRoot,
+  dateText,
+  image,
+  imageWrapper,
+  text,
+  textLink,
+} from "../styles/common.css";
 
 const Life = () => {
   return (
@@ -32,6 +39,9 @@ const Life = () => {
           🔗 22년까지 어떤 흔적을 남겨왔는지
         </Link>
         를 보시면, 저에 대한 이해가 더욱 쉬워지실 것이라 생각합니다.
+        <br />
+        <br />
+        <div className={dateText}>Last Updated 2024.02.12.</div>
       </Text>
     </div>
   );
