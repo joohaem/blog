@@ -174,7 +174,7 @@ const KEYWORDS = [
   },
 ].map((keyword) => ({
   ...keyword,
-  category: "Web" as const,
+  category: "Dev" as const,
 }));
 
 export { KEYWORDS };
