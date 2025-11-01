@@ -30,8 +30,8 @@ export const content = style({
 
 export const sentence = style({
   whiteSpace: 'pre-wrap',
-  lineHeight: "180%",
-  marginBottom: 8,
+  lineHeight: "200%",
+  marginBottom: 12,
 });
 
 export const sentenceKo = style({
@@ -39,7 +39,7 @@ export const sentenceKo = style({
 })
 
 export const divider = style({
-  margin: "20px 0",
+  margin: "40px 0",
   border: "none",
   borderTop: "1px solid rgba(0, 0, 0, 0.1)",
 })
