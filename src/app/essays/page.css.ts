@@ -1,7 +1,5 @@
 import { style } from "@vanilla-extract/css";
 
-import { MORE_DESKTOP_MEDIA_QUERY } from "@/consts/mediaQuery";
-
 export const contentContainer = style({
   marginTop: "40px",
 })
@@ -11,21 +9,11 @@ export const date = style({
 });
 
 export const title = style({
-  marginTop: "4px",
-  "@media": {
-    [MORE_DESKTOP_MEDIA_QUERY]: {
-      marginTop: "8px",
-    },
-  },
+  marginTop: "8px",
 });
 
 export const content = style({
-  marginTop: "4px",
-  "@media": {
-    [MORE_DESKTOP_MEDIA_QUERY]: {
-      marginTop: "8px",
-    },
-  },
+  marginTop: "8px",
 });
 
 export const sentence = style({
