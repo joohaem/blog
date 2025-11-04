@@ -38,6 +38,25 @@ export const ESSAYS: Essay[] = [
     ]
   },
   {
+    id: 'trip-with-older-sister-and-family',
+    publishedAt: new Date('2024-02-08'),
+    title: 'Trip with older sister and family',
+    contents: [
+      {
+        en: `Siblings teach us that it's possible to think differently, even within the same environment.`,
+        ko: '형제자매는 ‘같은 환경에서 할 수 있는 다른 생각’을 가르쳐준다.'
+      },
+      {
+        en: 'Even under the same parents, we each carry different emotions and make different choices.',
+        ko: '같은 부모 아래에서 다른 감정을 가지고, 다른 행동을 하고.'
+      },
+      {
+        en: `As a child, I simply followed my older sister, \nbut over time, as I began to notice different perspectives, \nperhaps I had already been learning—quietly and naturally—how to accept and live with those differences.`,
+        ko: '누나만 따라하던 나였지만, 다른 생각들이 보일 때 \n그것들에 익숙해지고 받아들이는 연습을 했지 않았을까 싶다.'
+      },
+    ]
+  },
+  {
     id: 'definition-of-romance',
     publishedAt: new Date('2023-07-15'),
     title: 'Definition of Romance',
